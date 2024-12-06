@@ -9,24 +9,25 @@
         {
             BlockId[,] data = new BlockId[Width, Height];
 
-            fill(data);
-            applyOreGen(data, new OreGenerator(BlockRegistry.Ore));
+            Fill(data);
+            ApplyOreGen(data, new OreGenerator(BlockRegistry.Ore));
             
             return data;
         }
 
-        private void fill(BlockId[,] data)
+        private static void Fill(BlockId[,] data)
         {
+            var blockId = BlockRegistry.Stone;
             for (var x = 0; x < data.GetLength(0); x++)
             {
                 for (var y = 0; y < data.GetLength(1); y++)
                 {
-                    data[x, y] = BlockRegistry.Stone;
+                    data[x, y] = blockId;
                 }
             }
         }
 
-        private void applyOreGen(BlockId[,] data, OreGenerator gen)
+        private static void ApplyOreGen(BlockId[,] data, OreGenerator gen)
         {
             for (var x = 0; x < data.GetLength(0); x++)
             {

@@ -43,11 +43,11 @@ public class TerrainGenerator : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                BlockId id = mapData[x, y];
+                var id = mapData[x, y];
                 
                 if (blocks.TryGetValue(id, out TileBase tile))
                 {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+                    tilemap.SetTile(new Vector3Int(x, -y, 0), tile);
                 }
             }
         }

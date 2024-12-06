@@ -8,13 +8,14 @@ namespace DefaultNamespace
         private readonly FastNoiseLite _noise;
         private readonly float _treshold;
         
-        public OreGenerator(BlockId ore, float treshold = 0.005f)
+        public OreGenerator(BlockId ore, float treshold = 0.95f)
         {
             _noise = new FastNoiseLite();
             _noise.SetSeed(123);
             _noise.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2);
             _noise.SetFrequency(0.05f);
             
+            _ore = ore;
             _treshold = treshold;
         }
 
