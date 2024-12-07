@@ -24,14 +24,16 @@ namespace DefaultNamespace
         
         void Update()
         {
-            // Rotate the gun to face the mouse cursor
-            mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 direction = mousePosition - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
+            mousePos.x = mousePos.x - gunPos.x;
+            mousePos.y = mousePos.y - gunPos.y;
 
-            spriteTransform.LookAt(mousePosition);
-            
+            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(new Vector3(180f, 0f, -angle));
+            mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
             // Check if left mouse button is held and if cooldown has elapsed
             if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
             {
