@@ -1,33 +1,38 @@
 ﻿using System.Collections.Generic;
+using UnityEngine.Tilemaps;
 
 namespace DefaultNamespace
 {
     public class TerrainGen
     {
+        public int FirstLayerHeight { get; set; } = 20;
         public int Width { get; set; }
         public int Height { get; set; }
         
-        public BlockId[,] Generate()
+        public BlockId[,] Generate(Tilemap tilemap, TileBase dirt)
         {
             BlockId[,] data = new BlockId[Width, Height];
+
+            TerrainInitDetector.FillBlockIdMap(data, tilemap, Width, FirstLayerHeight, dirt, BlockRegistry.Dirt);
             
-            FillPhase(data);
+            FillPhase(data, FirstLayerHeight);
             ApplyOreGen(data, new OreGenerator(BlockRegistry.Ore));
             
             return data;
         }
 
-        private static void FillPhase(BlockId[,] data)
+        private static void FillPhase(BlockId[,] data, int firstLayer)
         {
             BiomeGenerator biomeGenerator = new BiomeGenerator(new List<BiomeRange>
             {
-                new(BiomeRegistry.First, 0, 100),
+                new BiomeRange(BiomeRegistry.GrassBiome, 0, 50),
+                new(BiomeRegistry.First, 50, 100),
                 new(BiomeRegistry.Second, 101, 200)
             }, 10);
             
             for (var x = 0; x < data.GetLength(0); x++)
             {
-                for (var y = 0; y < data.GetLength(1); y++)
+                for (var y = firstLayer; y < data.GetLength(1); y++)
                 {
                     data[x, y] = BiomeRegistry.Biomes[biomeGenerator.GetBiomeForPos(x, y)].GetBlock(x, y);
                 }

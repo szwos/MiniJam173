@@ -10,6 +10,7 @@ namespace DefaultNamespace
         public static readonly BlockId Stone;
         public static readonly BlockId Ore;
         public static readonly BlockId CobbleStone;
+        public static readonly BlockId Dirt;
 
         static BlockRegistry()
         {
@@ -17,6 +18,7 @@ namespace DefaultNamespace
             Stone = Register(id => new Stone(id));
             Ore = Register(id => new Ore(id));
             CobbleStone = Register(id => new CobbleStone(id));
+            Dirt = Register(id => new DirtBlock(id));
         }
 
         [ItemCanBeNull] public static Dictionary<BlockId, BlockBase> Blocks { get; } = new();
