@@ -9,12 +9,14 @@ namespace DefaultNamespace
         public static readonly BlockId Air;
         public static readonly BlockId Stone;
         public static readonly BlockId Ore;
+        public static readonly BlockId CobbleStone;
 
         static BlockRegistry()
         {
             Air = Register(0);
             Stone = Register(id => new Stone(id));
             Ore = Register(id => new Ore(id));
+            CobbleStone = Register(id => new CobbleStone(id));
         }
 
         [ItemCanBeNull] public static Dictionary<BlockId, BlockBase> Blocks { get; } = new();

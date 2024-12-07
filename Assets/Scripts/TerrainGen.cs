@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace
+﻿using System.Collections.Generic;
+
+namespace DefaultNamespace
 {
     public class TerrainGen
     {
@@ -8,21 +10,26 @@
         public BlockId[,] Generate()
         {
             BlockId[,] data = new BlockId[Width, Height];
-
-            Fill(data);
+            
+            FillPhase(data);
             ApplyOreGen(data, new OreGenerator(BlockRegistry.Ore));
             
             return data;
         }
 
-        private static void Fill(BlockId[,] data)
+        private static void FillPhase(BlockId[,] data)
         {
-            var blockId = BlockRegistry.Stone;
+            BiomeGenerator biomeGenerator = new BiomeGenerator(new List<BiomeRange>
+            {
+                new(BiomeRegistry.First, 0, 100),
+                new(BiomeRegistry.Second, 101, 200)
+            }, 10);
+            
             for (var x = 0; x < data.GetLength(0); x++)
             {
                 for (var y = 0; y < data.GetLength(1); y++)
                 {
-                    data[x, y] = blockId;
+                    data[x, y] = BiomeRegistry.Biomes[biomeGenerator.GetBiomeForPos(x, y)].GetBlock(x, y);
                 }
             }
         }

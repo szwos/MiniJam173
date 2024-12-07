@@ -316,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stone: {fileID: 11400000, guid: 20ef71445e8a6cd48a089a2b0cde1ec2, type: 2}
   ore: {fileID: 11400000, guid: 720f7caa855a5f64ca50b3233e718fdd, type: 2}
+  cobble: {fileID: 11400000, guid: 0ea4f57530e2fb544b51cefb63794787, type: 2}
 --- !u!1001 &1077284494
 PrefabInstance:
   m_ObjectHideFlags: 0

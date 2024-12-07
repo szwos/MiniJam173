@@ -13,6 +13,7 @@ namespace DefaultNamespace
     {
         public TileBase stone;
         public TileBase ore;
+        public TileBase cobble;
 
         private Tilemap _tilemap;
         private BlockId[,] _blockMap;
@@ -27,6 +28,7 @@ namespace DefaultNamespace
         {
             _blockDictionary.Add(BlockRegistry.Stone, stone);
             _blockDictionary.Add(BlockRegistry.Ore, ore);
+            _blockDictionary.Add(BlockRegistry.CobbleStone, cobble);
 
             _blockMap = mapData;
             FillTilemap(mapData);
