@@ -43,11 +43,26 @@ public class Dig : MonoBehaviour
 
         if (block.CanDestroy())
         {
+            DoBlockActions(block);
             Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
             return selector.transform.position;
 
         }
         return null;
+    }
+
+    private void DoBlockActions(BlockBase block)
+    {
+
+
+        if (block.Id.Equals(BlockRegistry.Air))
+        {
+            //Do nothing, won't happen anyway
+        } else if (block.Id.Equals(BlockRegistry.Ore))
+        {
+            PlayerStats.Instance.Money += 100;
+        }
+
     }
 
 }
