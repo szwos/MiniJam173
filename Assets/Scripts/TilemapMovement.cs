@@ -36,9 +36,9 @@ public class TilemapMovement : MonoBehaviour
         }
     }
 
-    private void OnDigging(object sender, Vector3Int diggingDestination)
+    private void OnDigging(object sender, Vector3 diggingDestination)
     {
-        transform.position = Tilemap.CellToWorld(diggingDestination);
+        transform.position = diggingDestination;
     }
 
     /*void Move(Vector2Int direction)

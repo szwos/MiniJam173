@@ -1,13 +1,16 @@
+#nullable enable
+using DefaultNamespace;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public delegate void DiggingEventHandler(object sender, Vector3Int diggingDestination);
+public delegate void DiggingEventHandler(object sender, Vector3 diggingDestination);
 
 public class Dig : MonoBehaviour
 {
     public Collider2D DrillCollider;
-    public Tilemap Tilemap;
+    public GameObject DrillSelector; //has to be before DrillCollider, so that it is actually inside colliding block, not a pixel next to
+    public TerrainMananger Terrain;
 
     public event DiggingEventHandler Digging;
 
@@ -37,15 +40,18 @@ public class Dig : MonoBehaviour
             return;
         }
 
-        Debug.Log(collision.gameObject);
-        Debug.Log(collision.gameObject.tag);
+        BlockBase? block = Terrain.GetBlock(DrillSelector.transform.position);
 
-        if (collision.gameObject.tag == "diggable")
+        if(block == null)
         {
-            Vector3Int targetCellCoords = Tilemap.WorldToCell(transform.position);
-            Digging.Invoke(collision.gameObject, targetCellCoords);
-            Tilemap.SetTile(targetCellCoords, null);
-            //Tilemap.DeleteCells(targetCellCoords, new Vector3Int(1, 1, 0));
+            return;
         }
+
+        if(block.CanDestroy())
+        {
+            Terrain.SetBlock(DrillSelector.transform.position, BlockRegistry.Air);
+            Digging.Invoke(collision.gameObject, DrillSelector.transform.position);
+        }
+
     }
 }

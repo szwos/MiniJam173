@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -53,11 +56,27 @@ namespace DefaultNamespace
             _tilemap.SetTile(position, _blockDictionary[blockId]);
         }
 
-        public BlockBase GetBlock(Vector3 position)
+        public void SetBlock(Vector3 worldPosition, BlockId newBlockId)
         {
-            Vector3Int cellCoords = _tilemap.WorldToCell(position);
-            var blockId = _blockMap[cellCoords.x, cellCoords.y];
-            return BlockRegistry.Blocks[blockId];
+            Vector3Int cellCoords = _tilemap.WorldToCell(worldPosition);
+            _blockMap[cellCoords.x, cellCoords.y] = newBlockId;
+            _tilemap.SetTile(cellCoords, _blockDictionary[newBlockId]);
+        }
+
+        public BlockBase? GetBlock(Vector3 worldPosition)
+        {
+            Vector3Int cellCoords = _tilemap.WorldToCell(worldPosition);
+            BlockId? blockId = null;
+            try
+            {
+                blockId = _blockMap[cellCoords.x, cellCoords.y];
+            } catch (IndexOutOfRangeException e)
+            {
+                Debug.Log(e.Message);
+                return null;
+            }
+            
+            return BlockRegistry.Blocks[blockId.GetValueOrDefault()];
         }
 
     }
