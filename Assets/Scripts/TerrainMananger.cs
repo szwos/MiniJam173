@@ -11,6 +11,10 @@ namespace DefaultNamespace
 {
     public class TerrainMananger : MonoBehaviour
     {
+        public int Width = 100;
+        public int Height = 200;
+        
+        public TileBase dirt;
         public TileBase stone;
         public TileBase ore;
         public TileBase cobble;
@@ -22,10 +26,18 @@ namespace DefaultNamespace
         public void Start()
         {
             _tilemap = GetComponentInChildren<Tilemap>();
+            
+            TerrainGen terrainGen = new()
+            {
+                Width = Width,
+                Height = Height,
+            };
+            Init(terrainGen.Generate(_tilemap, dirt));
         }
 
-        public void Init(BlockId[,] mapData)
+        private void Init(BlockId[,] mapData)
         {
+            _blockDictionary.Add(BlockRegistry.Dirt, dirt);
             _blockDictionary.Add(BlockRegistry.Stone, stone);
             _blockDictionary.Add(BlockRegistry.Ore, ore);
             _blockDictionary.Add(BlockRegistry.CobbleStone, cobble);

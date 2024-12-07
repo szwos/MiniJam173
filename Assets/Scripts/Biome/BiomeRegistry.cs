@@ -6,11 +6,13 @@ namespace DefaultNamespace
 {
     public class BiomeRegistry
     {
+        public static readonly BiomeId GrassBiome;
         public static readonly BiomeId First;
         public static readonly BiomeId Second;
 
         static BiomeRegistry()
         {
+            GrassBiome = Register(id => new GrassBiome(id));
             First = Register(id => new FirstBiome(id));
             Second = Register(id => new SecondBiome(id));
         }
