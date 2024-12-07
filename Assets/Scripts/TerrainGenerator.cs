@@ -11,6 +11,7 @@ public class TerrainGenerator : MonoBehaviour
 
     public TileBase stone;
     public TileBase ore;
+    public TileBase cobble;
     
     private Dictionary<BlockId, TileBase> blocks = new();
     
@@ -18,6 +19,7 @@ public class TerrainGenerator : MonoBehaviour
     {
         blocks.Add(BlockRegistry.Stone, stone);
         blocks.Add(BlockRegistry.Ore, ore);
+        blocks.Add(BlockRegistry.CobbleStone, cobble);
         
         Debug.Log(tilemap);
         BlockId[,] mapData = GenerateMapData();
@@ -39,17 +41,27 @@ public class TerrainGenerator : MonoBehaviour
         int width = mapData.GetLength(0);
         int height = mapData.GetLength(1);
         
+        TileBase[] tiles = new TileBase[width * height];
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
+                int index = x + y * width;
                 var id = mapData[x, y];
-                
+
                 if (blocks.TryGetValue(id, out TileBase tile))
                 {
-                    tilemap.SetTile(new Vector3Int(x, -y, 0), tile);
+                    tiles[index] = tile;
+                }
+                else
+                {
+                    tiles[index] = null;
                 }
             }
         }
+        var bounds = new BoundsInt(0, -height + 1, 0, width, height, 1);
+        tilemap.SetTilesBlock(bounds, tiles);
     }
+
 }
