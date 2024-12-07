@@ -38,7 +38,6 @@ public class TilemapMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Digging logic
-        Debug.Log(_canMove);
         if(Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
             _movementDirection = Vector3.left;
