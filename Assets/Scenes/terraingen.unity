@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 481498604}
   - component: {fileID: 481498603}
   - component: {fileID: 481498602}
+  - component: {fileID: 481498607}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -640,6 +641,9 @@ MonoBehaviour:
   DigBehaviour: {fileID: 1913333097}
   DiggingDuration: 1
   MaxGroundedDistance: 0.15
+  MovementForce: 10000
+  FlyingForce: 30000
+  inputX: 0
 --- !u!212 &481498605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -714,6 +718,20 @@ Transform:
   - {fileID: 1872014199}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481498607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481498601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1217cf05368a7498693c66c1b82ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DimmPrefab: {fileID: 64147019533195902, guid: 878fdca33e84fd6468a015fe869ec981, type: 3}
+  Camera: {fileID: 232763580}
 --- !u!1 &549608032
 GameObject:
   m_ObjectHideFlags: 0
