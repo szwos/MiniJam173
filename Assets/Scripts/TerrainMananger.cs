@@ -29,6 +29,7 @@ namespace DefaultNamespace
             _blockDictionary.Add(BlockRegistry.Stone, stone);
             _blockDictionary.Add(BlockRegistry.Ore, ore);
             _blockDictionary.Add(BlockRegistry.CobbleStone, cobble);
+            _blockDictionary.Add(BlockRegistry.Air, null);
 
             _blockMap = mapData;
             FillTilemap(mapData);
@@ -53,25 +54,33 @@ namespace DefaultNamespace
             }
         }
 
-        public void SetBlock(Vector3Int position, BlockId blockId)
+        private Vector2Int GetBlockGridPosition(Vector3Int position)
         {
-            _tilemap.SetTile(position, _blockDictionary[blockId]);
+            return new Vector2Int(position.x, -position.y);
         }
+        
+        // public void SetBlock(Vector3Int position, BlockId blockId)
+        // {
+        //     _tilemap.SetTile(position, _blockDictionary[blockId]);
+        // }
+        
 
         public void SetBlock(Vector3 worldPosition, BlockId newBlockId)
         {
             Vector3Int cellCoords = _tilemap.WorldToCell(worldPosition);
-            _blockMap[cellCoords.x, cellCoords.y] = newBlockId;
+            Vector2Int blockPosition = GetBlockGridPosition(cellCoords);
+            _blockMap[blockPosition.x, blockPosition.y] = newBlockId;
             _tilemap.SetTile(cellCoords, _blockDictionary[newBlockId]);
         }
 
         public BlockBase? GetBlock(Vector3 worldPosition)
         {
             Vector3Int cellCoords = _tilemap.WorldToCell(worldPosition);
+            Vector2Int blockPosition = GetBlockGridPosition(cellCoords);
             BlockId? blockId = null;
             try
             {
-                blockId = _blockMap[cellCoords.x, cellCoords.y];
+                blockId = _blockMap[blockPosition.x, blockPosition.y];
             } catch (IndexOutOfRangeException e)
             {
                 Debug.Log(e.Message);
