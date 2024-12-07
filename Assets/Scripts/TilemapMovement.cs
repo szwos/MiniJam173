@@ -14,6 +14,10 @@ public class TilemapMovement : MonoBehaviour
     public Dig DigBehaviour;
     public float DiggingDuration = 1f;
     public float MaxGroundedDistance = 0.15f;
+    public float MovementForce = 10000f;
+    public float FlyingForce = 30000f;
+
+    public float inputX;
     
     private Vector3 _movementDirection = Vector3.right;
     private bool _canMove = true;
@@ -38,15 +42,6 @@ public class TilemapMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Digging logic
-        if(Input.GetKeyDown(KeyCode.LeftArrow)) 
-        {
-            _movementDirection = Vector3.left;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            _movementDirection = Vector3.right;
-        }
-
         if (Input.GetKey(KeyCode.LeftControl) && IsGrounded && _canMove)
         {
             Vector3? digDestination = DigBehaviour.TryDig(Vector2.right);
@@ -57,7 +52,7 @@ public class TilemapMovement : MonoBehaviour
             }            
         }
 
-        if(Input.GetKey(KeyCode.DownArrow) && IsGrounded && _canMove)
+        if(Input.GetKey(KeyCode.S) && IsGrounded && _canMove)
         {
             Vector3? digDestination = DigBehaviour.TryDig(Vector2.down);
             if (digDestination != null)
@@ -70,29 +65,23 @@ public class TilemapMovement : MonoBehaviour
         //Movement logic
         if (_canMove)
         {
-            if(_movementDirection == Vector3.left)
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
+            inputX = Input.GetAxis("Horizontal");
 
-            if(_movementDirection == Vector3.right) 
+            transform.rotation = inputX switch
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            }
+                < -0.001f => Quaternion.Euler(new Vector3(0, 180, 0)),
+                > 0.001f => Quaternion.Euler(new Vector3(0, 0, 0)),
+                _ => transform.rotation
+            };
 
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                SelfRb.AddForce(new Vector2(250f, 0));
-            }
+            SelfRb.AddForce(new Vector2(inputX * MovementForce * Time.fixedDeltaTime, 0f));
 
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                SelfRb.AddForce(new Vector2(-250f, 0));
-            }
-            if (Input.GetKey(KeyCode.Space))
+            //TODO: use fuel
+            
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
             {
                 PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
-                SelfRb.AddForce(new Vector2(0, 500f));
+                SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
             }
         }
 
