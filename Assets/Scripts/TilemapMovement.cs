@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class TilemapMovement : MonoBehaviour
 {
     [SerializeField]
     public Rigidbody2D SelfRb;
+    public SpriteRenderer HorizontalDrilllSprite;
+    public SpriteRenderer VerticalDrillSprite;
     public GameObject GroundedDetector;
     public Dig DigBehaviour;
     public float DiggingDuration = 1f;
@@ -14,6 +17,8 @@ public class TilemapMovement : MonoBehaviour
     
     private Vector3 _movementDirection = Vector3.right;
     private bool _canMove = true;
+    private bool _horizontalDrillVisible = false;
+    private bool _verticalDrillVisible = false;
 
     public bool IsGrounded
     {
@@ -32,6 +37,7 @@ public class TilemapMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Digging logic
         Debug.Log(_canMove);
         if(Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
@@ -47,7 +53,8 @@ public class TilemapMovement : MonoBehaviour
             Vector3? digDestination = DigBehaviour.TryDig(Vector2.right);
             if (digDestination != null)
             {
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration));
+
+                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.right));
             }            
         }
 
@@ -56,11 +63,12 @@ public class TilemapMovement : MonoBehaviour
             Vector3? digDestination = DigBehaviour.TryDig(Vector2.down);
             if (digDestination != null)
             {
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration));
+                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.down));
             }
         }
 
 
+        //Movement logic
         if (_canMove)
         {
             if(_movementDirection == Vector3.left)
@@ -87,16 +95,37 @@ public class TilemapMovement : MonoBehaviour
             {
                 SelfRb.AddForce(new Vector2(0, 500f));
             }
-        } 
+        }
+
+        //Animation logic
+        if (_horizontalDrillVisible)
+        {
+            HorizontalDrilllSprite.enabled = true;
+        }
+        else 
+        { 
+            HorizontalDrilllSprite.enabled = false; 
+        }
+
+        if (_verticalDrillVisible)
+        {
+            VerticalDrillSprite.enabled = true;
+        }
+        else
+        {
+            VerticalDrillSprite.enabled = false;
+        }
 
     }
 
-    private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector3 diggingEndPosition, float duration)
+    private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)
     {
         float t = 0f;
         _canMove = false;
+        if(direction == Vector2.right) { _horizontalDrillVisible = true; }
+        if (direction == Vector2.down) { _verticalDrillVisible = true; }
 
-        while(t < duration)
+        while (t < duration)
         {
             transform.position = Vector3.Lerp(diggingStartPosition, diggingEndPosition, t / duration);
             t += Time.deltaTime;
@@ -105,6 +134,8 @@ public class TilemapMovement : MonoBehaviour
         }
 
         _canMove = true;
+        _horizontalDrillVisible = false;
+        _verticalDrillVisible = false;
     }
 
 }
