@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public class TilemapMovement : MonoBehaviour
+public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterController or MovementController
 {
     [SerializeField]
     public Rigidbody2D SelfRb;
@@ -75,12 +75,11 @@ public class TilemapMovement : MonoBehaviour
             };
 
             SelfRb.AddForce(new Vector2(inputX * MovementForce * Time.fixedDeltaTime, 0f));
-
-            //TODO: use fuel
-            
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
             {
-                SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
+                PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
+                if(PlayerStats.Instance.Fuel > 0)
+                    SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
             }
         }
 
