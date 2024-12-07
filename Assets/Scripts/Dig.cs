@@ -8,105 +8,46 @@ public delegate void DiggingEventHandler(object sender, Vector3 diggingDestinati
 
 public class Dig : MonoBehaviour
 {
-    public Collider2D DrillColliderHorizontal;
-    public Collider2D DrillColliderVertical;
-    public GameObject DrillSelectorHorizontal; //has to be before DrillCollider, so that it is actually inside colliding block, not a pixel next to
+    public GameObject DrillSelectorHorizontal;
     public GameObject DrillSelectorVertical;
     public TerrainMananger Terrain;
     public TilemapMovement PlayerMovement;
 
     public event DiggingEventHandler Digging;
 
-    private void Start()
+    //direction:
+    //Vector2.right - horizontally
+    //Vector2.down - vertically
+    //returns Dig destination if can dig, null if cannot
+    public Vector3? TryDig(Vector2 direction)
     {
-        DrillColliderHorizontal.enabled = false;
-        DrillColliderVertical.enabled = false;    }
 
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.LeftControl))
+        GameObject selector;
+        if(direction == Vector2.right)
         {
-            DrillColliderHorizontal.enabled = true;
-            TryDig();
+            selector = DrillSelectorHorizontal;
+        } else if (direction == Vector2.down)
+        {
+            selector = DrillSelectorVertical;
+        } else
+        {
+            return null;
         }
-
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            DrillColliderHorizontal.enabled = false;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            TryDig();
-            DrillColliderVertical.enabled = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            DrillColliderVertical.enabled = false;
-        }
-
-
-    }
-
-    private void TryDig()
-    {
-        Debug.Log($"IsGrounded: {PlayerMovement.IsGrounded}\n IsDigging: {PlayerMovement.IsDigging}");
-        if (!PlayerMovement.IsGrounded || PlayerMovement.IsDigging == 0)
-        {
-            return;
-        }
-
-        GameObject selector = PlayerMovement.IsDigging switch
-        {
-            1 => DrillSelectorHorizontal,
-            2 => DrillSelectorVertical
-        };
 
         BlockBase? block = Terrain.GetBlock(selector.transform.position);
 
         if (block == null)
         {
-            return;
+            return null;
         }
 
         if (block.CanDestroy())
         {
             Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
-            //Digging.Invoke(collision.gameObject, selector.transform.position);
-            PlayerMovement.DigToPosition(selector.transform.position);
+            return selector.transform.position;
 
         }
+        return null;
     }
 
-
-    // Update is called once per frame
-    private void OnTrigger2D(Collider2D collision)
-    {
-        Debug.Log($"IsGrounded: {PlayerMovement.IsGrounded}\n IsDigging: {PlayerMovement.IsDigging}");
-        if (!PlayerMovement.IsGrounded || PlayerMovement.IsDigging == 0) 
-        {
-            return;
-        }
-
-        GameObject selector = PlayerMovement.IsDigging switch
-        {
-            1 => DrillSelectorHorizontal,
-            2 => DrillSelectorVertical
-        };
-
-        BlockBase? block = Terrain.GetBlock(selector.transform.position);
-
-        if(block == null)
-        {
-            return;
-        }
-
-        if(block.CanDestroy())
-        {
-            Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
-            Digging.Invoke(collision.gameObject, selector.transform.position);
-        }
-
-    }
 }

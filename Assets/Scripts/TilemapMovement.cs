@@ -1,57 +1,26 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
-//TOOD: flipowanie postaci
-//TOOD: stweakowaæ lerpa, bo po kopaniu sie jakos na chwile zatrzymuje zanim zacznie kopac nastepny (ale to nie jest wazne bardzo)
-//TODO: posprzatac tu moze, chociaz wsm wyjebane, to jest gamejam xd
 
 public class TilemapMovement : MonoBehaviour
 {
     [SerializeField]
-    public Tilemap Tilemap;
     public Rigidbody2D SelfRb;
     public GameObject GroundedDetector;
     public Dig DigBehaviour;
-    public float DiggingSpeed;
-    public float MaxGroundedDistance = 0.1f;
+    public float DiggingDuration = 1f;
+    public float MaxGroundedDistance = 0.15f;
     
-
-    private Vector3 _diggingStartPosition;
-    private Vector3 _diggingEndPosition;
     private Vector3 _movementDirection = Vector3.right;
-    private float _diggingStartTime;
-    private float _diggingDistance;
     private bool _canMove = true;
-
-    public int IsDigging
-    {
-        //0 - not digging
-        //1 - horizontaly
-        //2 - vertically
-        get
-        {
-            if (Input.GetKey(KeyCode.LeftControl))
-            {
-                return 1;
-            }
-            else if(Input.GetKey(KeyCode.DownArrow))
-            {
-                return 2;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-    }
 
     public bool IsGrounded
     {
         get
         {
             RaycastHit2D hit = Physics2D.Raycast(GroundedDetector.transform.position, Vector2.down, MaxGroundedDistance, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(GroundedDetector.transform.position, transform.TransformDirection(Vector3.down) * 1, Color.green);
+            Debug.DrawRay(GroundedDetector.transform.position, transform.TransformDirection(Vector3.down) * MaxGroundedDistance, Color.green);
             if(hit.distance > 0)
             {
                 return true;
@@ -60,15 +29,10 @@ public class TilemapMovement : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        DigBehaviour.Digging += OnDigging;
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(_canMove);
         if(Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
             _movementDirection = Vector3.left;
@@ -78,10 +42,36 @@ public class TilemapMovement : MonoBehaviour
             _movementDirection = Vector3.right;
         }
 
+        if (Input.GetKey(KeyCode.LeftControl) && IsGrounded && _canMove)
+        {
+            Vector3? digDestination = DigBehaviour.TryDig(Vector2.right);
+            if (digDestination != null)
+            {
+                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration));
+            }            
+        }
+
+        if(Input.GetKey(KeyCode.DownArrow) && IsGrounded && _canMove)
+        {
+            Vector3? digDestination = DigBehaviour.TryDig(Vector2.down);
+            if (digDestination != null)
+            {
+                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration));
+            }
+        }
+
 
         if (_canMove)
         {
+            if(_movementDirection == Vector3.left)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
 
+            if(_movementDirection == Vector3.right) 
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
 
             //TODO: use fuel
             if (Input.GetKey(KeyCode.RightArrow))
@@ -97,32 +87,24 @@ public class TilemapMovement : MonoBehaviour
             {
                 SelfRb.AddForce(new Vector2(0, 500f));
             }
-        } else
+        } 
+
+    }
+
+    private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector3 diggingEndPosition, float duration)
+    {
+        float t = 0f;
+        _canMove = false;
+
+        while(t < duration)
         {
-            float distanceCovered = (Time.time - _diggingStartTime) * DiggingSpeed;
-            float fractionOfMovement = distanceCovered / _diggingDistance;
-            transform.position = Vector3.Lerp(_diggingStartPosition, _diggingEndPosition, fractionOfMovement);
-            if(distanceCovered >= _diggingDistance - 0.01f)
-            {
-                _canMove = true;
-            }
+            transform.position = Vector3.Lerp(diggingStartPosition, diggingEndPosition, t / duration);
+            t += Time.deltaTime;
+
+            yield return null;
         }
 
-    }
-
-    private void OnDigging(object sender, Vector3 diggingDestination)
-    {
-        //transform.position = diggingDestination;
-        DigToPosition(diggingDestination);
-    }
-    
-    public void DigToPosition(Vector3 destination)
-    {
-        _diggingStartPosition = transform.position;
-        _diggingEndPosition = destination;
-        _diggingStartTime = Time.time;
-        _diggingDistance = Vector3.Distance(_diggingStartPosition, _diggingEndPosition);
-        _canMove = false;
+        _canMove = true;
     }
 
 }
