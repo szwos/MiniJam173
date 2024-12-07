@@ -80,7 +80,6 @@ public class TilemapMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
 
-            //TODO: use fuel
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 SelfRb.AddForce(new Vector2(250f, 0));
@@ -92,6 +91,7 @@ public class TilemapMovement : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Space))
             {
+                PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
                 SelfRb.AddForce(new Vector2(0, 500f));
             }
         }
