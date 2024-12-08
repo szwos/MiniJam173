@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &33824504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2579452308136204576, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+  m_PrefabInstance: {fileID: 5539179294345023221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &44470498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2353,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1913333096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179270549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7591097481275722747, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+  m_PrefabInstance: {fileID: 5539179294345023221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285486259
 GameObject:
   m_ObjectHideFlags: 0
@@ -48744,6 +48766,17 @@ MonoBehaviour:
   HealthDisplay: {fileID: 873337369}
   fuel: 0
   actualFuel: 0
+--- !u!114 &1563139864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7597398791213654517, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+  m_PrefabInstance: {fileID: 5539179294345023221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b8d64cc6684404a999588a2730e9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569319092
 GameObject:
   m_ObjectHideFlags: 0
@@ -49218,6 +49251,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b8d64cc6684404a999588a2730e9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2089419093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5978069981822338708, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+  m_PrefabInstance: {fileID: 5539179294345023221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1657630913492288507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49232,7 +49276,7 @@ PrefabInstance:
       objectReference: {fileID: 157527531}
     - target: {fileID: 1519931200148677075, guid: fde55d2959779b64f8bc620e66a871e4, type: 3}
       propertyPath: shopItems.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1519931200148677075, guid: fde55d2959779b64f8bc620e66a871e4, type: 3}
       propertyPath: 'shopItems.Array.data[0]'
@@ -49246,6 +49290,10 @@ PrefabInstance:
       propertyPath: 'shopItems.Array.data[2]'
       value: 
       objectReference: {fileID: 775048657}
+    - target: {fileID: 1519931200148677075, guid: fde55d2959779b64f8bc620e66a871e4, type: 3}
+      propertyPath: 'shopItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1563139864}
     - target: {fileID: 4999027973940938787, guid: fde55d2959779b64f8bc620e66a871e4, type: 3}
       propertyPath: m_Name
       value: szkolna
@@ -49377,10 +49425,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8361467812916988581}
     - target: {fileID: 3214129336638958088, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 8361467812916988581}
-    - target: {fileID: 3214129336638958088, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
       propertyPath: WeaponTop
       value: 
       objectReference: {fileID: 1619801486}
@@ -49428,6 +49472,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrades
       objectReference: {fileID: 0}
+    - target: {fileID: 7597398791213654517, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+      propertyPath: 'shopItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2089419093}
+    - target: {fileID: 7597398791213654517, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+      propertyPath: 'shopItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1179270549}
+    - target: {fileID: 7597398791213654517, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+      propertyPath: 'shopItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 33824504}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
