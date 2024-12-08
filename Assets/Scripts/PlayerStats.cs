@@ -28,7 +28,7 @@ public class PlayerStats : Singleton<PlayerStats>
     public float DrillSpeedMultiplier { get; set; } = 1f;
 
     //Economy
-    public int Money { get; set; }
+    public int Money { get; set; } = 500;
 
     //Misc
     public int Depth { get; set; }

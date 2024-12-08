@@ -4,10 +4,12 @@ namespace DefaultNamespace.Upgrade
 {
     public class GunAccessPlayerMod : PlayerModBase
     {
-        public GameObject weapon;
+        public GameObject Weapon;
+        public GameObject WeaponTop;
         public override void Apply()
         {
-            Instantiate(weapon, GameObject.Find("Character").transform);
+            Weapon.SetActive(true);
+            WeaponTop.SetActive(true);
         }
     }
 }
