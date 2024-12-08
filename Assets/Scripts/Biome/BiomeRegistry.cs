@@ -9,12 +9,18 @@ namespace DefaultNamespace
         public static readonly BiomeId GrassBiome;
         public static readonly BiomeId First;
         public static readonly BiomeId Second;
+        public static readonly BiomeId Third;
+        public static readonly BiomeId Fourth;
+        public static readonly BiomeId Fifth;
 
         static BiomeRegistry()
         {
             GrassBiome = Register(id => new GrassBiome(id));
             First = Register(id => new FirstBiome(id));
             Second = Register(id => new SecondBiome(id));
+            Third = Register(id => new ThirdBiome(id));
+            Fourth = Register(id => new FourthBiome(id));
+            Fifth = Register(id => new FifthBiome(id));
         }
 
         public static Dictionary<BiomeId, BiomeBase> Biomes { get; } = new();

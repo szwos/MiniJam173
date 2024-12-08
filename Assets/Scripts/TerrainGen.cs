@@ -27,7 +27,10 @@ namespace DefaultNamespace
             {
                 new BiomeRange(BiomeRegistry.GrassBiome, 0, 50),
                 new(BiomeRegistry.First, 50, 100),
-                new(BiomeRegistry.Second, 101, 200)
+                new(BiomeRegistry.Second, 101, 200),
+                new(BiomeRegistry.Third, 201, 300),
+                new(BiomeRegistry.Fourth, 301, 400),
+                new(BiomeRegistry.Fifth, 401, 500),
             }, 10);
             
             for (var x = 0; x < data.GetLength(0); x++)
