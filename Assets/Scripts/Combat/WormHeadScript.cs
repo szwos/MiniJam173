@@ -13,10 +13,17 @@ public class WormHeadScript : MonoBehaviour
     public TerrainMananger TerrainManager;
     public Transform WormAssemblyTransform;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Awake()
     {
-        
+        if (Player == null)
+        {
+            Player = FindFirstObjectByType<TilemapMovement>().transform;
+        }
+
+        if (TerrainManager == null)
+        {
+            TerrainManager = FindFirstObjectByType<TerrainMananger>();
+        }
     }
 
     private void FixedUpdate()
