@@ -43,6 +43,11 @@ public class Dig : MonoBehaviour
 
         if (block is IDestroyableBlock destroyableBlock)
         {
+            //If player doesn't have right drill, return null
+            if(destroyableBlock.Hardness > PlayerStats.Instance.DrillHardness)
+                return null;
+            
+            
             DoBlockActions(destroyableBlock);
             Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
             return (selector.transform.position, destroyableBlock);

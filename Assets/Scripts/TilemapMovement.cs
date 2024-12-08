@@ -80,7 +80,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     void FixedUpdate()
     {
         //Digging logic
-        if (Input.GetKey(KeyCode.LeftControl) && IsGrounded && _canMove)
+        if (Input.GetKey(KeyCode.LeftControl) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && IsGrounded && _canMove)
         {
             (Vector3, IDestroyableBlock)? digDestination = DigBehaviour.TryDig(Vector2.right);
             if (digDestination != null)
@@ -155,7 +155,10 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
 
     private void Dig(Vector3 digDestination, IDestroyableBlock block, Vector2 direction)
     {
-        StartCoroutine(DigCoroutine(transform.position, digDestination, DiggingDuration * (1f/block.MiningSpeedMultiplier), direction));
+        StartCoroutine(DigCoroutine(transform.position, 
+            digDestination, 
+            DiggingDuration * (1f/block.MiningSpeedMultiplier) * PlayerStats.Instance.DrillSpeedMultiplier, 
+            direction));
     }
 
     private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)
