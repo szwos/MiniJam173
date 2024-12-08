@@ -76,6 +76,8 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
                 _lastPressTimeD = Time.time;
             }
         }
+
+        PlayerStats.Instance.Depth = (int)transform.position.y + 10;
     }
     
     // Update is called once per frame

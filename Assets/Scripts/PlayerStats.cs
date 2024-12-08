@@ -7,6 +7,7 @@ public class PlayerStats : Singleton<PlayerStats>
     //Movement
     public float MovementForceMultiplier { get; set; } = 1f;
 
+
     //Fuel
     public float MaxFuel { get; set; } = 1000;
     public float Fuel { get; set; } = 1000;
@@ -22,11 +23,15 @@ public class PlayerStats : Singleton<PlayerStats>
     public float BulletSpeedMultiplier { get; set; } = 1f;
     public WeaponPlayerMod WeaponPlayerMod { get; set; }
 
-    //Economy
-    public int Money { get; set; }
-
+    //Drill
     public int DrillHardness { get; set; } = 1;
     public float DrillSpeedMultiplier { get; set; } = 1f;
+
+    //Economy
+    public int Money { get; set; } = 500;
+
+    //Misc
+    public int Depth { get; set; }
 
 }
        
