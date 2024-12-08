@@ -14,6 +14,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     public SpriteRenderer VerticalDrillSprite;
     public GameObject GroundedDetector;
     public Dig DigBehaviour;
+    public ParticleSystem flyParticles;
     public float DiggingDuration = 1f;
     public float MaxGroundedDistance = 0.15f;
     public float MovementForce = 10000f;
@@ -34,6 +35,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     private float _lastPressTimeD = 0f;
     
     private float _lastDash = 0f;
+    private bool _wasFlying = false;
     
 
     public bool IsGrounded
@@ -117,8 +119,16 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
             {
                 PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
-                if(PlayerStats.Instance.Fuel > 0)
+                if (PlayerStats.Instance.Fuel > 0)
+                {
+                    flyParticles.Play();
+                    _wasFlying = true;
                     SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
+                }
+            }
+            else if (_wasFlying)
+            {
+                flyParticles.Stop();
             }
         }
 
