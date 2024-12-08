@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -9,6 +10,8 @@ public class WormHeadScript : MonoBehaviour
     //public float RotationSpeed;
     public float MinDistance;
     public Transform Player;
+    public TerrainMananger TerrainManager;
+    public Transform WormAssemblyTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +31,13 @@ public class WormHeadScript : MonoBehaviour
 
 
         SelfRb.AddForce(this.transform.right * Speed);
+
+    }
+
+    private void Update()
+    {        
+        Vector3 worldPosition = transform.localPosition + WormAssemblyTransform.localPosition;
+        TerrainManager.SetBlock(worldPosition, BlockRegistry.Air);
 
     }
 
