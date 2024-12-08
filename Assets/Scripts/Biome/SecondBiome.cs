@@ -6,8 +6,10 @@
         public SecondBiome(BiomeId id) : base(id, "Second biome")
         {
             _oreGeneratorChain = new OreGeneratorChain();
-            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Copper, 0.97f, 0.15f));
-            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Gold, 0.85f, 0.2f));
+            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Copper, OreRarity.SUPER_RARE));
+            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Iron, OreRarity.COMMON));
+            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Lead, OreRarity.COMMON));
+            _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Gold, OreRarity.RARE));
         }
 
         public override BlockId GetBlock(int x, int y)

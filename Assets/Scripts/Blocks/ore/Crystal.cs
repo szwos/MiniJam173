@@ -8,7 +8,7 @@
         }
 
         public int Money => _money;
-        public int Hardness { get; } = 5;
+        public int Hardness { get; } = 1;
         public float MiningSpeedMultiplier { get; } = 0.4f;
     }
 }
