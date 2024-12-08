@@ -1,3 +1,4 @@
+using System;
 using DefaultNamespace.Shop;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -13,12 +14,36 @@ namespace DefaultNamespace.Shop
 
         private VisualElement itemsContainer;
         
-        void Start()
+        // void Start()
+        // {
+        //     GenerateShopItems();
+        // }
+
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            var root = uiDocument.rootVisualElement;
-            itemsContainer = root.Q<VisualElement>("Items");
-            
+            if (!other.CompareTag("Player")) return;
+            Debug.Log($"Enter {other}");
+            var component = other.GetComponent<ShopEnter>();
+            component.CurrentShop = this;
+        }
+
+        public void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player")) return;
+            Debug.Log($"Exit {other}");
+            var component = other.GetComponent<ShopEnter>();
+            component.CurrentShop = null;
+        }
+
+        public void ShowShop()
+        {
+            uiDocument.enabled = true;
             GenerateShopItems();
+        }
+
+        public void HideShop()
+        {
+            uiDocument.enabled = false;
         }
         
         public void BuyItem(UpgradeableShopItem item)
@@ -33,6 +58,8 @@ namespace DefaultNamespace.Shop
         
         void GenerateShopItems()
         {
+            var root = uiDocument.rootVisualElement;
+            itemsContainer = root.Q<VisualElement>("Items");
             foreach (var shopItem in shopItems)
             {
                 ShopItem current = shopItem.Current;
