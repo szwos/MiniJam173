@@ -13,13 +13,25 @@ namespace DefaultNamespace
     public class TerrainMananger : MonoBehaviour
     {
         public int Width = 100;
-        public int Height = 200;
+        public int Height = 300;
         
         public TileBase dirt;
         public TileBase stone;
         public TileBase copper;
         public TileBase gold;
         public TileBase cobble;
+        public TileBase deeperstone;
+        
+        public TileBase iron;
+        public TileBase lead;
+        public TileBase emerald;
+        public TileBase platinium;
+        public TileBase crystial;
+        public TileBase frozenDiamond;
+        
+        public TileBase coldStone;
+        public TileBase colderStone;
+        public TileBase coldestStone;
 
         private Tilemap _tilemap;
         private BlockId[,] _blockMap;
@@ -43,7 +55,20 @@ namespace DefaultNamespace
             _blockDictionary.Add(BlockRegistry.Stone, stone);
             _blockDictionary.Add(BlockRegistry.Copper, copper);
             _blockDictionary.Add(BlockRegistry.Gold, gold);
-            _blockDictionary.Add(BlockRegistry.CobbleStone, cobble);
+            _blockDictionary.Add(BlockRegistry.Deepstone, cobble);
+            _blockDictionary.Add(BlockRegistry.DeeperStone, deeperstone);
+            
+            _blockDictionary.Add(BlockRegistry.Iron, iron);
+            _blockDictionary.Add(BlockRegistry.Lead, lead);
+            _blockDictionary.Add(BlockRegistry.Emerald, emerald);
+            _blockDictionary.Add(BlockRegistry.Platinium, platinium);
+            _blockDictionary.Add(BlockRegistry.Crystal, crystial);
+            _blockDictionary.Add(BlockRegistry.FrozenDiamond, frozenDiamond);
+            
+            _blockDictionary.Add(BlockRegistry.ColdStone, coldStone);
+            _blockDictionary.Add(BlockRegistry.ColderStone, colderStone);
+            _blockDictionary.Add(BlockRegistry.ColdestStone, coldestStone);
+            
             _blockDictionary.Add(BlockRegistry.Air, null);
 
             _blockMap = mapData;

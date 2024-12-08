@@ -1,9 +1,9 @@
 ﻿namespace DefaultNamespace
 {
-    public class SecondBiome : BiomeBase
+    public class FourthBiome : BiomeBase
     {
         private readonly OreGeneratorChain _oreGeneratorChain;
-        public SecondBiome(BiomeId id) : base(id, "Second biome")
+        public FourthBiome(BiomeId id) : base(id, "Third biome")
         {
             _oreGeneratorChain = new OreGeneratorChain();
             _oreGeneratorChain.AddGenerator(new OreGenerator(BlockRegistry.Copper, 0.97f, 0.15f));
@@ -13,7 +13,7 @@
         public override BlockId GetBlock(int x, int y)
         {
             var generated = _oreGeneratorChain.GenerateOre(x, y);
-            return generated ?? BlockRegistry.Deepstone;
+            return generated ?? BlockRegistry.ColderStone;
         }
     }
 }
