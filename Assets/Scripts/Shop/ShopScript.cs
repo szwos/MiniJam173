@@ -63,16 +63,22 @@ namespace DefaultNamespace.Shop
         
         public void BuyItem(UpgradeableShopItem item)
         {
+            var playerStats = Singleton<PlayerStats>.Instance;
+            if (playerStats.Money < item.Current.price) return;
+            
             Debug.Log($"BuyItem {item}");
-
+            
+            playerStats.Money -= item.Current.price;
             item.Current.PlayerMod.Apply();
             item.id++;
+            
             
             GenerateShopItems();
         }
 
         void GenerateShopItems()
         {
+            var playerStats = Singleton<PlayerStats>.Instance;
             itemsContainer.Clear();
             foreach (var shopItem in shopItems)
             {
@@ -90,7 +96,7 @@ namespace DefaultNamespace.Shop
                 var button = itemElement.Q<Button>("BuyButton");
                 button.text = "Buy";
                 
-                if (!shopItem.IsMax)
+                if (!shopItem.IsMax && playerStats.Money >= current.price)
                     button.clicked += () => BuyItem(shopItem);
                 else button.SetEnabled(false);
                 

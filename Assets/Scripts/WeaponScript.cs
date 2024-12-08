@@ -18,11 +18,14 @@ namespace DefaultNamespace
 
         private float _damage;
         private float _fireRate;
+        
+        private PlayerStats _playerStats;
 
         void Start()
         {
             _mainCamera = Camera.main;
             spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
+            _playerStats = Singleton<PlayerStats>.Instance;
         }
         
         void Update()
@@ -40,7 +43,7 @@ namespace DefaultNamespace
             // Check if left mouse button is held and if cooldown has elapsed
             if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
             {
-                nextFireTime = Time.time + fireRate;
+                nextFireTime = Time.time + fireRate * (1f / _playerStats.FireRateMultiplier);
                 Shoot();
             }
         }
@@ -50,8 +53,8 @@ namespace DefaultNamespace
             // Create a new bullet instance at the firePoint position
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             BulletScript bulletScript = bullet.GetComponent<BulletScript>();
-            bulletScript.damage = Damage;
-            bulletScript.speed = bulletSpeed;
+            bulletScript.damage = Damage * _playerStats.DamageMultiplier;
+            bulletScript.speed = bulletSpeed * _playerStats.BulletSpeedMultiplier;
             bulletScript.target = mousePosition;
             bulletScript.lifeTime = 5f;
         }

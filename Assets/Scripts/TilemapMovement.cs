@@ -17,6 +17,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     public float MaxGroundedDistance = 0.15f;
     public float MovementForce = 10000f;
     public float FlyingForce = 30000f;
+    public float doubleClickThreshold = 0.3f;
 
     public float inputX;
     
@@ -24,6 +25,9 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     private bool _canMove = true;
     private bool _horizontalDrillVisible = false;
     private bool _verticalDrillVisible = false;
+    
+    private float _lastPressTimeA = 0f;
+    private float _lastPressTimeD = 0f;
 
     public bool IsGrounded
     {
@@ -82,6 +86,24 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
                 if(PlayerStats.Instance.Fuel > 0)
                     SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
             }
+            
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (Time.time - _lastPressTimeA <= doubleClickThreshold)
+                {
+                    HandleDoubleClick(Vector2.left);
+                }
+                _lastPressTimeA = Time.time;
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                if (Time.time - _lastPressTimeD <= doubleClickThreshold)
+                {
+                    HandleDoubleClick(Vector2.right);
+                }
+                _lastPressTimeD = Time.time;
+            }
         }
 
         //Animation logic
@@ -103,6 +125,11 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             VerticalDrillSprite.enabled = false;
         }
 
+    }
+
+    private void HandleDoubleClick(Vector2 direction)
+    {
+        throw new NotImplementedException();
     }
 
     private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)
