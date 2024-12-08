@@ -23,6 +23,10 @@ public class BulletScript : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider2D1)
     {
+        if (collider2D1.composite != null)
+        {
+                 collider2D1 = collider2D1.composite;
+        }
         if(collider2D1.gameObject.CompareTag("shootTarget") )
         {
             IEnemy enemy = collider2D1.GetComponent<IEnemy>();

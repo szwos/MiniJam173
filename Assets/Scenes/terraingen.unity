@@ -833,7 +833,7 @@ Transform:
   m_GameObject: {fileID: 308561936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.01, y: 4.2, z: 0.05273788}
+  m_LocalPosition: {x: 25.59, y: 4.09, z: 0.05273788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2406,6 +2406,7 @@ GameObject:
   - component: {fileID: 1086216497}
   - component: {fileID: 1086216496}
   - component: {fileID: 1086216495}
+  - component: {fileID: 1086216498}
   m_Layer: 0
   m_Name: WormSegment (1)
   m_TagString: Untagged
@@ -2498,6 +2499,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798007088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1086216498
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086216494}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.28125}
+    newSize: {x: 0.4, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.25, y: 1.28125}
+  m_EdgeRadius: 0
 --- !u!1 &1106679257
 GameObject:
   m_ObjectHideFlags: 0
@@ -47100,6 +47147,7 @@ GameObject:
   - component: {fileID: 1288522782}
   - component: {fileID: 1288522781}
   - component: {fileID: 1288522783}
+  - component: {fileID: 1288522784}
   m_Layer: 0
   m_Name: WormSegment
   m_TagString: Untagged
@@ -47192,6 +47240,52 @@ MonoBehaviour:
   NextSegment: {fileID: 308561936}
   Speed: 10
   DistanceFromNextSegment: 1
+--- !u!61 &1288522784
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288522780}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.28125}
+    newSize: {x: 0.4, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.25, y: 1.28125}
+  m_EdgeRadius: 0
 --- !u!1 &1323924293
 GameObject:
   m_ObjectHideFlags: 0
@@ -47203,6 +47297,7 @@ GameObject:
   - component: {fileID: 1323924294}
   - component: {fileID: 1323924296}
   - component: {fileID: 1323924295}
+  - component: {fileID: 1323924297}
   m_Layer: 0
   m_Name: WormSegment (4)
   m_TagString: Untagged
@@ -47295,6 +47390,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1323924297
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323924293}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.28125}
+    newSize: {x: 0.4, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.25, y: 1.28125}
+  m_EdgeRadius: 0
 --- !u!1 &1331610188
 GameObject:
   m_ObjectHideFlags: 0
@@ -47435,6 +47576,7 @@ GameObject:
   - component: {fileID: 1587572418}
   - component: {fileID: 1587572417}
   - component: {fileID: 1587572416}
+  - component: {fileID: 1587572419}
   m_Layer: 0
   m_Name: WormSegment (2)
   m_TagString: Untagged
@@ -47527,6 +47669,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798007088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1587572419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587572415}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.28125}
+    newSize: {x: 0.4, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.25, y: 1.28125}
+  m_EdgeRadius: 0
 --- !u!1 &1619801486
 GameObject:
   m_ObjectHideFlags: 0
@@ -47746,9 +47934,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798007088}
+  - component: {fileID: 1798007090}
+  - component: {fileID: 1798007089}
+  - component: {fileID: 1798007091}
   m_Layer: 0
   m_Name: Worm
-  m_TagString: Untagged
+  m_TagString: shootTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47774,6 +47965,164 @@ Transform:
   - {fileID: 1323924294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!66 &1798007089
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798007087}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1288522784}
+    m_ColliderPaths:
+    - - X: 272249984
+        Y: 42206248
+      - X: 259749984
+        Y: 42206248
+      - X: 259749984
+        Y: 29393750
+      - X: 272249984
+        Y: 29393750
+  - m_Collider: {fileID: 1086216498}
+    m_ColliderPaths:
+    - - X: 281249920
+        Y: 39006252
+      - X: 268749920
+        Y: 39006252
+      - X: 268749920
+        Y: 26193752
+      - X: 281249920
+        Y: 26193752
+  - m_Collider: {fileID: 1587572419}
+    m_ColliderPaths:
+    - - X: 289150016
+        Y: 35006248
+      - X: 276650016
+        Y: 35006248
+      - X: 276650016
+        Y: 22193746
+      - X: 289150016
+        Y: 22193746
+  - m_Collider: {fileID: 1903969379}
+    m_ColliderPaths:
+    - - X: 297750016
+        Y: 29106254
+      - X: 285250016
+        Y: 29106254
+      - X: 285250016
+        Y: 16293755
+      - X: 297750016
+        Y: 16293755
+  - m_Collider: {fileID: 1323924297}
+    m_ColliderPaths:
+    - - X: 308050016
+        Y: 23306246
+      - X: 295550016
+        Y: 23306246
+      - X: 295550016
+        Y: 10493746
+      - X: 308050016
+        Y: 10493746
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 30.804974, y: 1.0493746}
+      - {x: 30.804974, y: 2.3306246}
+      - {x: 29.775002, y: 2.3306541}
+      - {x: 29.774973, y: 2.9106255}
+      - {x: 28.915003, y: 2.9106548}
+      - {x: 28.914972, y: 3.500625}
+      - {x: 28.124992, y: 3.5006545}
+      - {x: 28.124964, y: 3.9006252}
+      - {x: 27.224998, y: 3.9006546}
+      - {x: 27.22497, y: 4.220625}
+      - {x: 25.974998, y: 4.220596}
+      - {x: 25.975027, y: 2.939375}
+      - {x: 26.874992, y: 2.9393456}
+      - {x: 26.875021, y: 2.6193752}
+      - {x: 27.665003, y: 2.619346}
+      - {x: 27.665031, y: 2.2193747}
+      - {x: 28.525002, y: 2.2193453}
+      - {x: 28.52503, y: 1.6293756}
+      - {x: 29.555002, y: 1.6293461}
+      - {x: 29.55503, y: 1.0493746}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 1798007087}
+--- !u!50 &1798007090
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798007087}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1798007091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798007087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5545e5daa4f8e4e44b69e8ae1ab31161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 150
+  _damage: 30
+  _knockbackStrength: 18000
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &1872014197
 GameObject:
   m_ObjectHideFlags: 0
@@ -47872,6 +48221,7 @@ GameObject:
   - component: {fileID: 1903969378}
   - component: {fileID: 1903969377}
   - component: {fileID: 1903969376}
+  - component: {fileID: 1903969379}
   m_Layer: 0
   m_Name: WormSegment (3)
   m_TagString: Untagged
@@ -47964,6 +48314,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798007088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1903969379
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903969375}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.28125}
+    newSize: {x: 0.4, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.25, y: 1.28125}
+  m_EdgeRadius: 0
 --- !u!1 &1913333095
 GameObject:
   m_ObjectHideFlags: 0
