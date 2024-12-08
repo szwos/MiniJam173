@@ -19,7 +19,7 @@ namespace DefaultNamespace
             Stone = Register(id => new Stone(id));
             Copper = Register(id => new Copper(id));
             Gold = Register(id => new Gold(id));
-            CobbleStone = Register(id => new CobbleStone(id));
+            CobbleStone = Register(id => new Deepstone(id));
             Dirt = Register(id => new DirtBlock(id));
         }
 

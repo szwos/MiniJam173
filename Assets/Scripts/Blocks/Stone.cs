@@ -3,7 +3,8 @@
     public class Stone : BlockBase
     {
         public Stone(BlockId id) : base(id, "Stone") { }
-        
-        public bool canDestry { get; set; }
+
+        public int Hardness { get; } = 1;
+        public float MiningSpeedMultiplier { get; } = 1f;
     }
 }

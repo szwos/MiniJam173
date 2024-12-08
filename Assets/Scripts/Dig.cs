@@ -19,7 +19,7 @@ public class Dig : MonoBehaviour
     //Vector2.right - horizontally
     //Vector2.down - vertically
     //returns Dig destination if can dig, null if cannot
-    public Vector3? TryDig(Vector2 direction)
+    public (Vector3, IDestroyableBlock)? TryDig(Vector2 direction)
     {
 
         GameObject selector;
@@ -41,17 +41,17 @@ public class Dig : MonoBehaviour
             return null;
         }
 
-        if (block.CanDestroy())
+        if (block is IDestroyableBlock destroyableBlock)
         {
-            DoBlockActions(block);
+            DoBlockActions(destroyableBlock);
             Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
-            return selector.transform.position;
+            return (selector.transform.position, destroyableBlock);
 
         }
         return null;
     }
 
-    private void DoBlockActions(BlockBase block)
+    private void DoBlockActions(IDestroyableBlock block)
     {
 
 

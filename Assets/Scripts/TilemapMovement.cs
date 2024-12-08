@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -81,20 +82,21 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
         //Digging logic
         if (Input.GetKey(KeyCode.LeftControl) && IsGrounded && _canMove)
         {
-            Vector3? digDestination = DigBehaviour.TryDig(Vector2.right);
+            (Vector3, IDestroyableBlock)? digDestination = DigBehaviour.TryDig(Vector2.right);
             if (digDestination != null)
             {
-
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.right));
+                Dig(digDestination.GetValueOrDefault().Item1, digDestination.GetValueOrDefault().Item2, Vector2.right);
+                // StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault().Item1, DiggingDuration, Vector2.right));
             }            
         }
 
         if(Input.GetKey(KeyCode.S) && IsGrounded && _canMove)
         {
-            Vector3? digDestination = DigBehaviour.TryDig(Vector2.down);
+            (Vector3, IDestroyableBlock)? digDestination = DigBehaviour.TryDig(Vector2.down);
             if (digDestination != null)
             {
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.down));
+                Dig(digDestination.GetValueOrDefault().Item1, digDestination.GetValueOrDefault().Item2, Vector2.down);
+                // StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault().Item1, DiggingDuration, Vector2.down));
             }
         }
 
@@ -149,6 +151,11 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             PlayerStats.Instance.Fuel -= dashFuelConsumption;
             _lastDash = Time.time;
         }
+    }
+
+    private void Dig(Vector3 digDestination, IDestroyableBlock block, Vector2 direction)
+    {
+        StartCoroutine(DigCoroutine(transform.position, digDestination, DiggingDuration * (1f/block.MiningSpeedMultiplier), direction));
     }
 
     private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)
