@@ -1166,6 +1166,9 @@ MonoBehaviour:
   MovementForce: 10000
   FlyingForce: 30000
   doubleClickThreshold: 0.3
+  dashCooldown: 2
+  dashStrength: 10
+  dashFuelConsumption: 100
   inputX: 0
 --- !u!212 &481498605
 SpriteRenderer:
