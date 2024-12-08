@@ -61,7 +61,11 @@ public class PlayerHealth : MonoBehaviour
                 if(PlayerStats.Instance.Money > 0)
                 {
                     PlayerStats.Instance.Money -= 1;
-                    PlayerStats.Instance.Fuel += 2;
+                    if (PlayerStats.Instance.Fuel < PlayerStats.Instance.MaxFuel)
+                    {
+
+                        PlayerStats.Instance.Fuel += 2;
+                    }
                     PlayerStats.Instance.Health++;
                 }
             }
