@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5724563642687632486}
   - component: {fileID: 109896171791824325}
-  - component: {fileID: 3135349104728329844}
   - component: {fileID: 1220667092751698950}
   - component: {fileID: 6394238596686601005}
+  - component: {fileID: 5970488378764610052}
   m_Layer: 0
   m_Name: pdf
   m_TagString: shootTarget
@@ -90,18 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3135349104728329844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7074723275830625772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430948bc6d25ead4daad1663459f938c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1220667092751698950
 Rigidbody2D:
   serializedVersion: 5
@@ -175,3 +163,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.54, y: 0.63}
   m_EdgeRadius: 0
+--- !u!114 &5970488378764610052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074723275830625772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489c0fcdf0035b943a828449c19f9b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockbackStrength: 10000
+  _damage: 10

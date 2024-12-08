@@ -25,10 +25,10 @@ public class BulletScript : MonoBehaviour
     {
         if(collider2D1.gameObject.CompareTag("shootTarget") )
         {
-            EnemyScript enemy = collider2D1.GetComponent<EnemyScript>();
+            IEnemy enemy = collider2D1.GetComponent<IEnemy>();
             if(enemy != null)
             {
-                enemy.DealDamage(damage);
+                enemy.TakeDamage(damage);
                 Destroy(gameObject);
             }
         

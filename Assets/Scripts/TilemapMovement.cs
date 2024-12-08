@@ -8,6 +8,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
 {
     [SerializeField]
     public Rigidbody2D SelfRb;
+    public Collider2D collider1;
     public SpriteRenderer HorizontalDrilllSprite;
     public SpriteRenderer VerticalDrillSprite;
     public GameObject GroundedDetector;
@@ -119,9 +120,67 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             yield return null;
         }
 
+        SelfRb.linearVelocityY = 0f;
         _canMove = true;
         _horizontalDrillVisible = false;
         _verticalDrillVisible = false;
     }
 
+    public void Knockback(Vector3 knockbackSource, float invicibilityFrameDuration, float knockbackStrength)
+    {
+        StartCoroutine(InvicibilityVisualEffectCoroutine(invicibilityFrameDuration));
+        if (knockbackSource.x > transform.position.x)
+        {
+            SelfRb.AddForce(new Vector2(-1, 0.7f) * knockbackStrength);
+        } else
+        {
+            SelfRb.AddForce(new Vector2(1, 0.7f) * knockbackStrength);
+        }
+        
+    }
+
+    private IEnumerator InvicibilityVisualEffectCoroutine(float duration)
+    {
+        float t = 0;
+        ApplyColorAlphaToAllChildrenAndSelf(transform, 0.3f);
+        GetComponent<Collider2D>().excludeLayers |= LayerMask.GetMask("Enemy");
+        while (t < duration)
+        {
+            yield return null;
+            t += Time.deltaTime;
+        }
+        ApplyColorAlphaToAllChildrenAndSelf(transform, 1f);
+        GetComponent<Collider2D>().excludeLayers &= ~LayerMask.GetMask("Enemy");
+    }
+
+    private void ApplyColorAlphaToAllChildrenAndSelf(Transform transform, float alpha)
+    {
+        int childCount = transform.childCount;
+
+        for (int i = 0; i < childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+
+            if (child != null)
+            {
+                SpriteRenderer spriteRenderer;
+                if(child.TryGetComponent<SpriteRenderer>(out spriteRenderer))
+                {
+                    spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
+                }
+
+                if (child.childCount != 0)
+                {
+                    ApplyColorAlphaToAllChildrenAndSelf(child.transform, alpha);
+                }
+            }
+        }
+
+        SpriteRenderer renderer;
+        if (transform.TryGetComponent<SpriteRenderer>(out renderer))
+        {
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, alpha);
+        }
+
+    }
 }
