@@ -120,6 +120,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             yield return null;
         }
 
+        SelfRb.linearVelocityY = 0f;
         _canMove = true;
         _horizontalDrillVisible = false;
         _verticalDrillVisible = false;
