@@ -272,7 +272,6 @@ GameObject:
   - component: {fileID: 5753192267023504952}
   - component: {fileID: 6718231547335136491}
   - component: {fileID: 1519931200148677075}
-  - component: {fileID: 2432957941999996420}
   - component: {fileID: 3771511311665880430}
   m_Layer: 0
   m_Name: szkolna
@@ -367,27 +366,9 @@ MonoBehaviour:
   shopItems:
   - {fileID: 0}
   - {fileID: 0}
-  uiDocument: {fileID: 2432957941999996420}
+  uiDocument: {fileID: 0}
   itemTemplate: {fileID: 9197481963319205126, guid: 697af77b2abdaa34c9dd2c6fe31a8cd9, type: 3}
---- !u!114 &2432957941999996420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4999027973940938787}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: af9b46b68659fce4489d8aeb5a00e776, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 464707409914c074e89764b617b3f4a1, type: 3}
-  m_SortingOrder: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
+  shopTemplate: {fileID: 9197481963319205126, guid: 464707409914c074e89764b617b3f4a1, type: 3}
 --- !u!61 &3771511311665880430
 BoxCollider2D:
   m_ObjectHideFlags: 0

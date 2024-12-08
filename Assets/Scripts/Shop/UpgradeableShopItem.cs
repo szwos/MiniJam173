@@ -1,4 +1,5 @@
-﻿using DefaultNamespace.Upgrade;
+﻿using System;
+using DefaultNamespace.Upgrade;
 using UnityEngine;
 
 namespace DefaultNamespace.Shop
@@ -9,6 +10,8 @@ namespace DefaultNamespace.Shop
         public ShopItem[] shopItems;
         public int id = 0;
         
-        public ShopItem Current => shopItems[id];
+        public ShopItem Current => id >= shopItems.Length ? shopItems[^1] : shopItems[id];
+
+        public bool IsMax => id == shopItems.Length;
     }
 }

@@ -9,15 +9,26 @@ namespace DefaultNamespace.Shop
     {
         public UpgradeableShopItem[] shopItems;
 
-        public UIDocument uiDocument; // The main UIDocument in your scene.
-        public VisualTreeAsset itemTemplate; // Directly assignable in the Inspector.
-
+        public UIDocument uiDocument;
+        public VisualTreeAsset itemTemplate;
+        public VisualTreeAsset shopTemplate;
+        
+        
+        private VisualElement root;
+        private VisualElement shopContainer;
         private VisualElement itemsContainer;
         
-        // void Start()
-        // {
-        //     GenerateShopItems();
-        // }
+        void Start()
+        {
+            root = uiDocument.rootVisualElement;
+            shopContainer = root.Q("shop-container");
+            shopContainer.Add( shopTemplate.Instantiate());
+            itemsContainer = shopContainer.Q<VisualElement>("Items");
+            
+            shopContainer.style.display = DisplayStyle.None;
+            
+            // GenerateShopItems();
+        }
 
         public void OnTriggerEnter2D(Collider2D other)
         {
@@ -37,13 +48,17 @@ namespace DefaultNamespace.Shop
 
         public void ShowShop()
         {
-            uiDocument.enabled = true;
+            // uiDocument.enabled = true;
+            
+            shopContainer.style.display = DisplayStyle.Flex;
+            
             GenerateShopItems();
         }
 
         public void HideShop()
         {
-            uiDocument.enabled = false;
+            // uiDocument.enabled = false;
+            shopContainer.style.display = DisplayStyle.None;
         }
         
         public void BuyItem(UpgradeableShopItem item)
@@ -53,36 +68,37 @@ namespace DefaultNamespace.Shop
             item.Current.PlayerMod.Apply();
             item.id++;
             
-            
+            GenerateShopItems();
         }
-        
+
         void GenerateShopItems()
         {
-            var root = uiDocument.rootVisualElement;
-            itemsContainer = root.Q<VisualElement>("Items");
+            itemsContainer.Clear();
             foreach (var shopItem in shopItems)
             {
                 ShopItem current = shopItem.Current;
                 
-                // Clone the item template and bind data.
                 VisualElement itemElement = itemTemplate.Instantiate();
-
-                // Set up the item icon.
+                // Debug.Log($"Creating {itemElement}");
+                
                 var icon = itemElement.Q<VisualElement>("Icon");
                 icon.style.backgroundImage = new StyleBackground(current.icon);
-
-                // Set up the item name and price.
+                
                 var label = itemElement.Q<Label>("ItemLabel");
-                label.text = $"{current.itemName}\nPrice: {current.price}";
-
-                // Set up the buy button.
+                label.text = !shopItem.IsMax ? $"{current.itemName}\nPrice: {current.price}" : "MAX\n";
+                
                 var button = itemElement.Q<Button>("BuyButton");
                 button.text = "Buy";
-                button.clicked += () => BuyItem(shopItem);
-
-                // Add the item element to the container.
+                
+                if (!shopItem.IsMax)
+                    button.clicked += () => BuyItem(shopItem);
+                else button.SetEnabled(false);
+                
                 itemsContainer.Add(itemElement);
             }
+            
+            // Debug.Log($"Created {itemsContainer}");
+            // Debug.Log($"Showing {itemsContainer.childCount} children");
         }
     }
 }
