@@ -34,22 +34,38 @@ public class PlayerHealth : MonoBehaviour
 
     private void HandleCollision(GameObject collisionGameObject)
     {
-        if (_isInvincible)
-        {
-            return;
-        }
+
 
         IEnemy enemy = collisionGameObject.transform.GetComponent<IEnemy>();
         if (enemy != null)
         {
+            if (_isInvincible)
+            {
+                return;
+            }
+
             PlayerStats.Instance.Health -= enemy.Damage;
             var playerMovement = transform.GetComponent<TilemapMovement>();
             playerMovement.Knockback(collisionGameObject.transform.position, InvicibilityFrameDuration, enemy.KnockbackStrength);
             StartCoroutine(InvicibilityFrameCoroutine(InvicibilityFrameDuration));
         }
+        
     }
 
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "gasStation")
+        {
+            if(Input.GetKey(KeyCode.E))
+            {
+                if(PlayerStats.Instance.Money > 0)
+                {
+                    PlayerStats.Instance.Money -= 1;
+                    PlayerStats.Instance.Fuel++;
+                }
+            }
+        }
+    }
 
     private IEnumerator InvicibilityFrameCoroutine(float duration)
     {
