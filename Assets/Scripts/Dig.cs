@@ -13,6 +13,8 @@ public class Dig : MonoBehaviour
     public TerrainMananger Terrain;
     public TilemapMovement PlayerMovement;
 
+    public float digFuelConsumption = 1f;
+
     public event DiggingEventHandler Digging;
 
     //direction:
@@ -50,6 +52,9 @@ public class Dig : MonoBehaviour
             
             DoBlockActions(destroyableBlock);
             Terrain.SetBlock(selector.transform.position, BlockRegistry.Air);
+
+            PlayerStats.Instance.Fuel -= digFuelConsumption;
+            
             return (selector.transform.position, destroyableBlock);
 
         }
