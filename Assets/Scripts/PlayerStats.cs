@@ -20,6 +20,9 @@ public class PlayerStats : Singleton<PlayerStats>
     public float BulletSpeedMultiplier { get; set; } = 10f;
     public float MovementForceMultiplier { get; set; } = 1f;
 
+    public int DrillHardness { get; set; } = 1;
+    public float DrillSpeedMultiplier { get; set; } = 1f;
+
 }
        
 

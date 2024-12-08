@@ -1,6 +1,6 @@
 ﻿namespace DefaultNamespace
 {
-    public class Stone : BlockBase
+    public class Stone : BlockBase, IDestroyableBlock
     {
         public Stone(BlockId id) : base(id, "Stone") { }
 
