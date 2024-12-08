@@ -16,7 +16,7 @@ namespace DefaultNamespace
             TerrainInitDetector.FillBlockIdMap(data, tilemap, Width, FirstLayerHeight, dirt, BlockRegistry.Dirt);
             
             FillPhase(data, FirstLayerHeight);
-            ApplyOreGen(data, new OreGenerator(BlockRegistry.Ore));
+            // ApplyOreGen(data, new OreGenerator(BlockRegistry.Copper));
             
             return data;
         }
@@ -39,17 +39,17 @@ namespace DefaultNamespace
             }
         }
 
-        private static void ApplyOreGen(BlockId[,] data, OreGenerator gen)
-        {
-            for (var x = 0; x < data.GetLength(0); x++)
-            {
-                for (var y = 0; y < data.GetLength(1); y++)
-                {
-                    var generated = gen.GenerateOre(x, y);
-                    if (generated.HasValue)
-                        data[x, y] = generated.Value;
-                }
-            }
-        }
+        // private static void ApplyOreGen(BlockId[,] data, OreGenerator gen)
+        // {
+        //     for (var x = 0; x < data.GetLength(0); x++)
+        //     {
+        //         for (var y = 0; y < data.GetLength(1); y++)
+        //         {
+        //             var generated = gen.GenerateOre(x, y);
+        //             if (generated.HasValue)
+        //                 data[x, y] = generated.Value;
+        //         }
+        //     }
+        // }
     }
 }

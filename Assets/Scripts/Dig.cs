@@ -55,14 +55,18 @@ public class Dig : MonoBehaviour
     {
 
 
-        if (block.Id.Equals(BlockRegistry.Air))
-        {
-            //Do nothing, won't happen anyway
-        } else if (block.Id.Equals(BlockRegistry.Ore))
-        {
-            PlayerStats.Instance.Money += 100;
-        }
+        // if (block.Id.Equals(BlockRegistry.Air))
+        // {
+        //     //Do nothing, won't happen anyway
+        // } else if (block.Id.Equals(BlockRegistry.Copper))
+        // {
+        //     PlayerStats.Instance.Money += 100;
+        // }
 
+        if (block is IGiveMoneyBlock giveMoneyBlock)
+        {
+            PlayerStats.Instance.Money += giveMoneyBlock.Money;
+        }
     }
 
 }

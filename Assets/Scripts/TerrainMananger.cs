@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using static Unity.Collections.AllocatorManager;
 
@@ -16,7 +17,8 @@ namespace DefaultNamespace
         
         public TileBase dirt;
         public TileBase stone;
-        public TileBase ore;
+        public TileBase copper;
+        public TileBase gold;
         public TileBase cobble;
 
         private Tilemap _tilemap;
@@ -39,7 +41,8 @@ namespace DefaultNamespace
         {
             _blockDictionary.Add(BlockRegistry.Dirt, dirt);
             _blockDictionary.Add(BlockRegistry.Stone, stone);
-            _blockDictionary.Add(BlockRegistry.Ore, ore);
+            _blockDictionary.Add(BlockRegistry.Copper, copper);
+            _blockDictionary.Add(BlockRegistry.Gold, gold);
             _blockDictionary.Add(BlockRegistry.CobbleStone, cobble);
             _blockDictionary.Add(BlockRegistry.Air, null);
 

@@ -8,7 +8,8 @@ namespace DefaultNamespace
     {
         public static readonly BlockId Air;
         public static readonly BlockId Stone;
-        public static readonly BlockId Ore;
+        public static readonly BlockId Copper;
+        public static readonly BlockId Gold;
         public static readonly BlockId CobbleStone;
         public static readonly BlockId Dirt;
 
@@ -16,7 +17,8 @@ namespace DefaultNamespace
         {
             Air = Register(0);
             Stone = Register(id => new Stone(id));
-            Ore = Register(id => new Ore(id));
+            Copper = Register(id => new Copper(id));
+            Gold = Register(id => new Gold(id));
             CobbleStone = Register(id => new CobbleStone(id));
             Dirt = Register(id => new DirtBlock(id));
         }
