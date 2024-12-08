@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -18,7 +19,10 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     public float MovementForce = 10000f;
     public float FlyingForce = 30000f;
     public float doubleClickThreshold = 0.3f;
-
+    public float dashCooldown = 1f;
+    public float dashStrength = 20f;
+    public float dashFuelConsumption = 20f;
+    
     public float inputX;
     
     private Vector3 _movementDirection = Vector3.right;
@@ -28,6 +32,9 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     
     private float _lastPressTimeA = 0f;
     private float _lastPressTimeD = 0f;
+    
+    private float _lastDash = 0f;
+    
 
     public bool IsGrounded
     {
@@ -43,26 +50,53 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
         }
     }
 
+    void Update()
+    {
+        if (_canMove)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (Time.time - _lastPressTimeA <= doubleClickThreshold)
+                {
+                    PerformDash(Vector2.left);
+                }
+
+                _lastPressTimeA = Time.time;
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                if (Time.time - _lastPressTimeD <= doubleClickThreshold)
+                {
+                    PerformDash(Vector2.right);
+                }
+
+                _lastPressTimeD = Time.time;
+            }
+        }
+    }
+    
     // Update is called once per frame
     void FixedUpdate()
     {
         //Digging logic
         if (Input.GetKey(KeyCode.LeftControl) && IsGrounded && _canMove)
         {
-            Vector3? digDestination = DigBehaviour.TryDig(Vector2.right);
+            (Vector3, IDestroyableBlock)? digDestination = DigBehaviour.TryDig(Vector2.right);
             if (digDestination != null)
             {
-
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.right));
+                Dig(digDestination.GetValueOrDefault().Item1, digDestination.GetValueOrDefault().Item2, Vector2.right);
+                // StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault().Item1, DiggingDuration, Vector2.right));
             }            
         }
 
         if(Input.GetKey(KeyCode.S) && IsGrounded && _canMove)
         {
-            Vector3? digDestination = DigBehaviour.TryDig(Vector2.down);
+            (Vector3, IDestroyableBlock)? digDestination = DigBehaviour.TryDig(Vector2.down);
             if (digDestination != null)
             {
-                StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault(), DiggingDuration, Vector2.down));
+                Dig(digDestination.GetValueOrDefault().Item1, digDestination.GetValueOrDefault().Item2, Vector2.down);
+                // StartCoroutine(DigCoroutine(transform.position, digDestination.GetValueOrDefault().Item1, DiggingDuration, Vector2.down));
             }
         }
 
@@ -85,24 +119,6 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
                 PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
                 if(PlayerStats.Instance.Fuel > 0)
                     SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
-            }
-            
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (Time.time - _lastPressTimeA <= doubleClickThreshold)
-                {
-                    HandleDoubleClick(Vector2.left);
-                }
-                _lastPressTimeA = Time.time;
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                if (Time.time - _lastPressTimeD <= doubleClickThreshold)
-                {
-                    HandleDoubleClick(Vector2.right);
-                }
-                _lastPressTimeD = Time.time;
             }
         }
 
@@ -127,9 +143,19 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
 
     }
 
-    private void HandleDoubleClick(Vector2 direction)
-     {
-        //throw new NotImplementedException();
+    private void PerformDash(Vector2 direction)
+    {
+        if (Time.time - _lastDash >= dashCooldown)
+        {
+            SelfRb.linearVelocityX = direction.x * dashStrength;
+            PlayerStats.Instance.Fuel -= dashFuelConsumption;
+            _lastDash = Time.time;
+        }
+    }
+
+    private void Dig(Vector3 digDestination, IDestroyableBlock block, Vector2 direction)
+    {
+        StartCoroutine(DigCoroutine(transform.position, digDestination, DiggingDuration * (1f/block.MiningSpeedMultiplier), direction));
     }
 
     private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)

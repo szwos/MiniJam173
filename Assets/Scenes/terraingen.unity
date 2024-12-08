@@ -1166,6 +1166,9 @@ MonoBehaviour:
   MovementForce: 10000
   FlyingForce: 30000
   doubleClickThreshold: 0.3
+  dashCooldown: 2
+  dashStrength: 10
+  dashFuelConsumption: 100
   inputX: 0
 --- !u!212 &481498605
 SpriteRenderer:
@@ -2092,7 +2095,8 @@ MonoBehaviour:
   Height: 200
   dirt: {fileID: 11400000, guid: 5b10869e56796044ea6f16e5a99a1f67, type: 2}
   stone: {fileID: 11400000, guid: 791618103501e4a42b9e6134f89e93f6, type: 2}
-  ore: {fileID: 11400000, guid: 8d9e27421caf7f64cac8e19e98cabe9f, type: 2}
+  copper: {fileID: 11400000, guid: 8d9e27421caf7f64cac8e19e98cabe9f, type: 2}
+  gold: {fileID: 11400000, guid: cc0a35fa5b8d6d540a2b2799e8ae993d, type: 2}
   cobble: {fileID: 11400000, guid: bbe1669fe10519d44b9906fd3a8689c1, type: 2}
 --- !u!1 &1049774879
 GameObject:
