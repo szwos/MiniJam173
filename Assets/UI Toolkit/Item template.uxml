@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="Label" name="ItemLabel" style="-unity-text-align: upper-center;" />
+    <engine:VisualElement name="Icon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Environment/props/big-crate.png?fileID=2800000&amp;guid=3fc2bbd409bf34ab6af1637bab569da1&amp;type=3#big-crate&quot;);" />
+    <engine:Button text="BUY BUY BUY" name="BuyButton" />
+</engine:UXML>

@@ -16,6 +16,9 @@ namespace DefaultNamespace
         private Vector3 mousePosition;
         private Transform spriteTransform;
 
+        private float _damage;
+        private float _fireRate;
+
         void Start()
         {
             _mainCamera = Camera.main;

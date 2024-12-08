@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="VisualElement" style="flex-grow: 1; margin-top: 5%; margin-right: 5%; margin-bottom: 5%; margin-left: 5%; background-color: rgb(63, 63, 63); background-image: url(&quot;project://database/Assets/UI%20Toolkit/does-forsen-browse-this-subreddit-v0-9b091jbnjiud1.png?fileID=2800000&amp;guid=d7a1b96cb45f25c44ada6528316e9b9d&amp;type=3#does-forsen-browse-this-subreddit-v0-9b091jbnjiud1&quot;); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+        <engine:Label text="SHOP BIG SHOP BIG" name="Label" style="font-size: 32px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+        <engine:VisualElement name="Items" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.84); -unity-text-outline-color: rgba(0, 0, 0, 0); align-self: auto; justify-content: flex-start; align-items: stretch; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; padding-top: 2%; padding-bottom: 2%; padding-right: 2%; padding-left: 2%;" />
+    </engine:VisualElement>
+</engine:UXML>
