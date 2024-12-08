@@ -128,8 +128,8 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     }
 
     private void HandleDoubleClick(Vector2 direction)
-    {
-        throw new NotImplementedException();
+     {
+        //throw new NotImplementedException();
     }
 
     private IEnumerator DigCoroutine(Vector3 diggingStartPosition, Vector2 diggingEndPosition, float duration, Vector2 direction)

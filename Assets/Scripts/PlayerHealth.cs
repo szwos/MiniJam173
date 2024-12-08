@@ -22,23 +22,34 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_isInvincible) 
+        HandleCollision(collision.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        HandleCollision(collision.gameObject);
+    }
+
+    private void HandleCollision(GameObject collisionGameObject)
+    {
+        if (_isInvincible)
         {
             return;
         }
 
-        IEnemy enemy = collision.transform.GetComponent<IEnemy>();
+        IEnemy enemy = collisionGameObject.transform.GetComponent<IEnemy>();
         if (enemy != null)
         {
             PlayerStats.Instance.Health -= enemy.Damage;
             var playerMovement = transform.GetComponent<TilemapMovement>();
-            playerMovement.Knockback(collision.transform.position, InvicibilityFrameDuration, enemy.KnockbackStrength);
+            playerMovement.Knockback(collisionGameObject.transform.position, InvicibilityFrameDuration, enemy.KnockbackStrength);
             StartCoroutine(InvicibilityFrameCoroutine(InvicibilityFrameDuration));
         }
     }
+
+
 
     private IEnumerator InvicibilityFrameCoroutine(float duration)
     {

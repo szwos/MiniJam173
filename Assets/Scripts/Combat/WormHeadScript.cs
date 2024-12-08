@@ -19,18 +19,11 @@ public class WormHeadScript : MonoBehaviour
     private void FixedUpdate()
     {
         float distance = Vector3.Distance(transform.position, Player.position);
-        //
-            //rotate slowly
-            Vector2 direction = Player.transform.position - transform.position;
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+       
+        Vector2 direction = Player.transform.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-
-        /*float rotationSpeed = distance / (1 + distance);
-    Debug.Log(rotationSpeed);
-        transform.rotation = Quaternion.Euler(Vector3.forward * (angle * rotationSpeed));            */
-
-        //}
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(Vector3.forward * angle), Time.deltaTime * distance * 0.25f);
 
 
