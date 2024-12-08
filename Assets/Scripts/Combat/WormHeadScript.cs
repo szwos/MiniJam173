@@ -6,7 +6,7 @@ public class WormHeadScript : MonoBehaviour
     public Rigidbody2D SelfRb;
     public float Speed;
     [Range(0f, 1f)]
-    public float RotationSpeed;
+    //public float RotationSpeed;
     public float MinDistance;
     public Transform Player;
 
@@ -19,16 +19,20 @@ public class WormHeadScript : MonoBehaviour
     private void FixedUpdate()
     {
         float distance = Vector3.Distance(transform.position, Player.position);
-        if(distance > MinDistance)
-        {
+        //
             //rotate slowly
             Vector2 direction = Player.transform.position - transform.position;
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            
-            
-            transform.rotation = Quaternion.Euler(Vector3.forward * (angle / Time.deltaTime * RotationSpeed));            
-        }
+
+
+        /*float rotationSpeed = distance / (1 + distance);
+    Debug.Log(rotationSpeed);
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle * rotationSpeed));            */
+
+        //}
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(Vector3.forward * angle), Time.deltaTime * distance * 0.25f);
+
 
         SelfRb.AddForce(this.transform.right * Speed);
 
