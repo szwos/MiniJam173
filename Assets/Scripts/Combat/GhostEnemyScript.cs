@@ -27,6 +27,14 @@ public class GhostEnemyScript : MonoBehaviour, IEnemy
         } 
     }
 
+    public void Awake()
+    {
+        if (Player == null) 
+        {
+            Player = FindFirstObjectByType<TilemapMovement>().transform.gameObject;
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         Health -= damage;
