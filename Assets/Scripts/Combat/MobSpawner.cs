@@ -14,18 +14,24 @@ public class MobSpawner : MonoBehaviour
     public float MinimumRangeToSpawn;
     public float MaximumRangeToSpawn;
 
+    private float DepthMultiplayer;
 
     //FixedUpdate is 50 Hz by default
     private void FixedUpdate()
-    {
-        if((int)Random.Range(0, 50 * 60 * BatBaseSpawnRate) == 0)
+    {        
+        if (PlayerStats.Instance.Depth < 0)
         {
-            SpawnMob(BatPrefab);
-        }
+            DepthMultiplayer = 1f / (float)(1 +  (-PlayerStats.Instance.Depth) / 100);
 
-        if((int)Random.Range(0, 50 * 60 * WormBaseSpawnRate) == 0)
-        {
-            SpawnMob(WormPrefab);
+            if ((int)Random.Range(0, 50 * 60 * BatBaseSpawnRate * DepthMultiplayer) == 0)
+            {
+                SpawnMob(BatPrefab);
+            }
+
+            if ((int)Random.Range(0, 50 * 60 * WormBaseSpawnRate * DepthMultiplayer) == 0)
+            {
+                SpawnMob(WormPrefab);
+            }
         }
     }
 

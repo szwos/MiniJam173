@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Text MoneyDisplay;
+    public Text DepthDisplay;
     public Slider FuelDisplay;
     public Slider HealthDisplay;
 
@@ -17,5 +18,7 @@ public class UIController : MonoBehaviour
         FuelDisplay.value = 1 - PlayerStats.Instance.Fuel / PlayerStats.Instance.MaxFuel;
 
         HealthDisplay.value = 1 - PlayerStats.Instance.Health / PlayerStats.Instance.MaxHealth;
+
+        DepthDisplay.text = PlayerStats.Instance.Depth.ToString() + " meters";
     }
 }

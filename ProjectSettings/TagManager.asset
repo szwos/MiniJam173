@@ -6,6 +6,7 @@ TagManager:
   tags:
   - diggable
   - shootTarget
+  - gasStation
   layers:
   - Default
   - TransparentFX

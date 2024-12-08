@@ -61,7 +61,8 @@ public class PlayerHealth : MonoBehaviour
                 if(PlayerStats.Instance.Money > 0)
                 {
                     PlayerStats.Instance.Money -= 1;
-                    PlayerStats.Instance.Fuel++;
+                    PlayerStats.Instance.Fuel += 2;
+                    PlayerStats.Instance.Health++;
                 }
             }
         }
