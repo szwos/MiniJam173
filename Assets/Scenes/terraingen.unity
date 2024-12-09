@@ -6712,9 +6712,9 @@ MonoBehaviour:
   GroundedDetector: {fileID: 462524685}
   DigBehaviour: {fileID: 1913333097}
   flyParticles: {fileID: 144874132}
-  AudioSourceBooster: {fileID: 0}
-  AudioSourceDrill: {fileID: 0}
-  AudioSourceAlarm: {fileID: 0}
+  AudioSourceBooster: {fileID: 4933876697467694113, guid: 043b7e87e14cbf34a808308a33b5f69f, type: 3}
+  AudioSourceDrill: {fileID: 4933876697467694113, guid: 6b327551780a4f949a14b50e3b4b3ab1, type: 3}
+  AudioSourceAlarm: {fileID: 4933876697467694113, guid: 8796a879fdff14c408e5c57355721289, type: 3}
   DiggingDuration: 1
   MaxGroundedDistance: 0.15
   MovementForce: 10000
@@ -54810,7 +54810,7 @@ MonoBehaviour:
   DrillSelectorVertical: {fileID: 1071620612}
   Terrain: {fileID: 1001425565}
   PlayerMovement: {fileID: 481498604}
-  AudioSourceCannotDig: {fileID: 0}
+  AudioSourceCannotDig: {fileID: 4933876697467694113, guid: 89269a2aef5c144498ccd8c6d2be8e57, type: 3}
   digFuelConsumption: 1
 --- !u!1 &1951438481
 GameObject:
@@ -55391,7 +55391,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 9069336763755986368, guid: 3c29f0457fdd6e04eb6832865f9ed040, type: 3}
   bulletSpeed: 20
   fireRate: 0.2
-  AudioSource: {fileID: 0}
+  AudioSource: {fileID: 4933876697467694113, guid: b9522df90f8780b48933ddd10f1c63d4, type: 3}
 --- !u!1 &8361467812916988581
 GameObject:
   m_ObjectHideFlags: 0
