@@ -66,7 +66,8 @@ public class PlayerHealth : MonoBehaviour
 
                         PlayerStats.Instance.Fuel += 2;
                     }
-                    PlayerStats.Instance.Health++;
+                    if(PlayerStats.Instance.Health < PlayerStats.Instance.MaxHealth)
+                        PlayerStats.Instance.Health++;
                 }
             }
         }
