@@ -1,7 +1,5 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
 public class Soundtrack : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class Soundtrack : MonoBehaviour
         if (!_musicIsPlaying)
         {
             SelectMusic();
-            BreakForRandomDuration();
+            //BreakForRandomDuration();
         }
         
     }
