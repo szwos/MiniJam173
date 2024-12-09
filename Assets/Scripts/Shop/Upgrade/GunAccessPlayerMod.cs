@@ -8,6 +8,7 @@ namespace DefaultNamespace.Upgrade
         public GameObject WeaponTop;
         public override void Apply()
         {
+            Debug.Log("Enable weapon");
             Weapon.SetActive(true);
             WeaponTop.SetActive(true);
         }
