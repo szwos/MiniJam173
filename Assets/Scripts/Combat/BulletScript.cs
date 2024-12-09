@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public ParticleSystem particle;
+    
     public float damage;
     public float speed;
     public float lifeTime = 5f;
@@ -33,6 +35,7 @@ public class BulletScript : MonoBehaviour
             if(enemy != null)
             {
                 enemy.TakeDamage(damage);
+                Instantiate(particle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         
