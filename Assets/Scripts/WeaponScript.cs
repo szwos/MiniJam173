@@ -21,6 +21,8 @@ namespace DefaultNamespace
         
         private PlayerStats _playerStats;
 
+        public AudioSource AudioSource;
+
         void Start()
         {
             _mainCamera = Camera.main;
@@ -57,6 +59,7 @@ namespace DefaultNamespace
             bulletScript.speed = bulletSpeed * _playerStats.BulletSpeedMultiplier;
             bulletScript.target = mousePosition;
             bulletScript.lifeTime = 5f;
+            Instantiate(AudioSource, transform);
         }
     }
 }

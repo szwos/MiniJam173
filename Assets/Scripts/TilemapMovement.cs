@@ -15,6 +15,9 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     public GameObject GroundedDetector;
     public Dig DigBehaviour;
     public ParticleSystem flyParticles;
+    public AudioSource AudioSourceBooster;
+    public AudioSource AudioSourceDrill;
+    public AudioSource AudioSourceAlarm;
     public float DiggingDuration = 1f;
     public float MaxGroundedDistance = 0.15f;
     public float MovementForce = 10000f;
@@ -23,6 +26,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     public float dashCooldown = 1f;
     public float dashStrength = 20f;
     public float dashFuelConsumption = 20f;
+    public float AudioFrequency = 10; //50 is once per second
     
     public float inputX;
     
@@ -36,7 +40,10 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     
     private float _lastDash = 0f;
     private bool _wasFlying = false;
-    
+
+    private bool _tickAudio = false;
+    private int _tickAudioCounter = 0;
+
 
     public bool IsGrounded
     {
@@ -83,6 +90,18 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Audio logic
+        
+        if(_tickAudioCounter == AudioFrequency)
+        {
+            _tickAudio = true;
+            _tickAudioCounter = 0;
+        } else
+        {
+            _tickAudio = false;
+        }
+        _tickAudioCounter++;
+
         //Digging logic
         if (Input.GetKey(KeyCode.LeftControl) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && IsGrounded && _canMove)
         {
@@ -120,9 +139,16 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
             SelfRb.AddForce(new Vector2(inputX * MovementForce * Time.fixedDeltaTime, 0f));
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
             {
+                var prevFuel = PlayerStats.Instance.Fuel;
                 PlayerStats.Instance.Fuel -= PlayerStats.Instance.FuelConsumption;
+                if(prevFuel >= 300 && PlayerStats.Instance.Fuel < 300)
+                {
+                    Instantiate(AudioSourceAlarm, transform);
+                }
                 if (PlayerStats.Instance.Fuel > 0)
                 {
+                    
+                    if(_tickAudio) Instantiate(AudioSourceBooster, transform);
                     flyParticles.Play();
                     _wasFlying = true;
                     SelfRb.AddForce(new Vector2(0, FlyingForce * Time.fixedDeltaTime));
@@ -180,8 +206,10 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
         if(direction == Vector2.right) { _horizontalDrillVisible = true; }
         if (direction == Vector2.down) { _verticalDrillVisible = true; }
 
+        
         while (t < duration)
         {
+            if(_tickAudio) Instantiate(AudioSourceDrill, transform);
             transform.position = Vector3.Lerp(diggingStartPosition, diggingEndPosition, t / duration);
             t += Time.deltaTime;
 

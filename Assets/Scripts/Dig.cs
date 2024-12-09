@@ -12,6 +12,7 @@ public class Dig : MonoBehaviour
     public GameObject DrillSelectorVertical;
     public TerrainMananger Terrain;
     public TilemapMovement PlayerMovement;
+    public AudioSource AudioSourceCannotDig;
 
     public float digFuelConsumption = 1f;
 
@@ -47,7 +48,11 @@ public class Dig : MonoBehaviour
         {
             //If player doesn't have right drill, return null
             if(destroyableBlock.Hardness > PlayerStats.Instance.DrillHardness)
+            {
+                Instantiate(AudioSourceCannotDig, transform);
                 return null;
+            }
+
             
             
             DoBlockActions(destroyableBlock);
