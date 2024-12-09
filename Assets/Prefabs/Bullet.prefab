@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0112268ed915549b269f81a82a4985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 1500380754660110801, guid: dd781239953de2e4b8d5346a0d6f228f, type: 3}
   damage: 5
   speed: 0
   lifeTime: 5
