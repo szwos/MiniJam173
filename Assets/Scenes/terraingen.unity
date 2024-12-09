@@ -6722,7 +6722,7 @@ MonoBehaviour:
   doubleClickThreshold: 0.3
   dashCooldown: 2
   dashStrength: 10
-  dashFuelConsumption: 100
+  dashFuelConsumption: 30
   AudioFrequency: 10
   inputX: 0
 --- !u!212 &481498605
