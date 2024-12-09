@@ -55254,6 +55254,10 @@ PrefabInstance:
       propertyPath: WeaponTop
       value: 
       objectReference: {fileID: 1619801486}
+    - target: {fileID: 3510447658005470577, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
+      propertyPath: price
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4111670597705183917, guid: 253347f1c70724642a8434d4913ec9c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.007084
