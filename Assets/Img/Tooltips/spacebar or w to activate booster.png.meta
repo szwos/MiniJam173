@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 2914e6154fa596b459bace9f4ae4f965
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2175628483918688148
+    second: spacebar or w to activate booster_0
+  - first:
+      213: -1940195757658250442
+    second: spacebar or w to activate booster_1
+  - first:
+      213: -5218623024750479097
+    second: spacebar or w to activate booster_2
+  - first:
+      213: -4992388730086292322
+    second: spacebar or w to activate booster_3
+  - first:
+      213: -3435510523722248058
+    second: spacebar or w to activate booster_4
+  - first:
+      213: -3520494866015526704
+    second: spacebar or w to activate booster_5
+  - first:
+      213: 3271883959399535779
+    second: spacebar or w to activate booster_6
+  - first:
+      213: 1611951173681419791
+    second: spacebar or w to activate booster_7
+  - first:
+      213: -5059588997656589421
+    second: spacebar or w to activate booster_8
+  - first:
+      213: -1090623138484477573
+    second: spacebar or w to activate booster_9
+  - first:
+      213: -1351227089248701075
+    second: spacebar or w to activate booster_10
+  - first:
+      213: 741001980886782760
+    second: spacebar or w to activate booster_11
+  - first:
+      213: -8680307605678614282
+    second: spacebar or w to activate booster_12
+  - first:
+      213: 8122130616220398052
+    second: spacebar or w to activate booster_13
+  - first:
+      213: -3623209369271801584
+    second: spacebar or w to activate booster_14
+  - first:
+      213: 9014190590179739701
+    second: spacebar or w to activate booster_15
+  - first:
+      213: -6376942642341886255
+    second: spacebar or w to activate booster_16
+  - first:
+      213: -1712002395743690731
+    second: spacebar or w to activate booster_17
+  - first:
+      213: -427844211732563440
+    second: spacebar or w to activate booster_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49fe1334492613e10800000000000000
+      internalID: 2175628483918688148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 22
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6336f0eec3a0315e0800000000000000
+      internalID: -1940195757658250442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 22
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709b219220ab397b0800000000000000
+      internalID: -5218623024750479097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e940b8a96e877bab0800000000000000
+      internalID: -4992388730086292322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6805b6b716d9250d0800000000000000
+      internalID: -3435510523722248058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 22
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0ee8d5290b42fc0800000000000000
+      internalID: -3520494866015526704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 22
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4de4a3021186d20800000000000000
+      internalID: 3271883959399535779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 22
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f061e8e4d0dce5610800000000000000
+      internalID: 1611951173681419791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_8
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 22
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b443d0d9ab8c9b0800000000000000
+      internalID: -5059588997656589421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_9
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71afcea8045dd0f0800000000000000
+      internalID: -1090623138484477573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_10
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 22
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6532761f1a7f3de0800000000000000
+      internalID: -1351227089248701075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_11
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 22
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8231e982061984a00800000000000000
+      internalID: 741001980886782760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_12
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 22
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8976e093a598780800000000000000
+      internalID: -8680307605678614282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1342733ca97b070800000000000000
+      internalID: 8122130616220398052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019efa57646c7bdc0800000000000000
+      internalID: -3623209369271801584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_15
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 22
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53805512596d81d70800000000000000
+      internalID: 9014190590179739701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_16
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 22
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6cb2a047c8087a0800000000000000
+      internalID: -6376942642341886255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_17
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 22
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510641344eebd38e0800000000000000
+      internalID: -1712002395743690731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spacebar or w to activate booster_18
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 22
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a397cc4fdff0af0800000000000000
+      internalID: -427844211732563440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spacebar or w to activate booster_0: 2175628483918688148
+      spacebar or w to activate booster_1: -1940195757658250442
+      spacebar or w to activate booster_10: -1351227089248701075
+      spacebar or w to activate booster_11: 741001980886782760
+      spacebar or w to activate booster_12: -8680307605678614282
+      spacebar or w to activate booster_13: 8122130616220398052
+      spacebar or w to activate booster_14: -3623209369271801584
+      spacebar or w to activate booster_15: 9014190590179739701
+      spacebar or w to activate booster_16: -6376942642341886255
+      spacebar or w to activate booster_17: -1712002395743690731
+      spacebar or w to activate booster_18: -427844211732563440
+      spacebar or w to activate booster_2: -5218623024750479097
+      spacebar or w to activate booster_3: -4992388730086292322
+      spacebar or w to activate booster_4: -3435510523722248058
+      spacebar or w to activate booster_5: -3520494866015526704
+      spacebar or w to activate booster_6: 3271883959399535779
+      spacebar or w to activate booster_7: 1611951173681419791
+      spacebar or w to activate booster_8: -5059588997656589421
+      spacebar or w to activate booster_9: -1090623138484477573
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: c8c27213b03839f4e91f2e730d323fa3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7250395108116332023
+    second: You die_0
+  - first:
+      213: -3447237138931247935
+    second: You die_1
+  - first:
+      213: -2106744737646003956
+    second: You die_2
+  - first:
+      213: -3320490247041012403
+    second: You die_3
+  - first:
+      213: -3000316863479869521
+    second: You die_4
+  - first:
+      213: -4882652638115506238
+    second: You die_5
+  - first:
+      213: 6731295003963882012
+    second: You die_6
+  - first:
+      213: -2315819769107802221
+    second: You die_7
+  - first:
+      213: 4662497785182323418
+    second: You die_8
+  - first:
+      213: 8892236837715987374
+    second: You die_9
+  - first:
+      213: 4881864210348111049
+    second: You die_10
+  - first:
+      213: 7207351808372315749
+    second: You die_11
+  - first:
+      213: -6302954830740415506
+    second: You die_12
+  - first:
+      213: -5180927147601646930
+    second: You die_13
+  - first:
+      213: 4791329786589974380
+    second: You die_14
+  - first:
+      213: 4558592251417728889
+    second: You die_15
+  - first:
+      213: 5513546613424550776
+    second: You die_16
+  - first:
+      213: 1037211752576546917
+    second: You die_17
+  - first:
+      213: -1751435231021217981
+    second: You die_18
+  - first:
+      213: -4897556915146702232
+    second: You die_19
+  - first:
+      213: -5333060093195589891
+    second: You die_20
+  - first:
+      213: 8937915819639469738
+    second: You die_21
+  - first:
+      213: -4609695829318797425
+    second: You die_22
+  - first:
+      213: -4315371298496483132
+    second: You die_23
+  - first:
+      213: -6523338480595229051
+    second: You die_24
+  - first:
+      213: -1004576493717931477
+    second: You die_25
+  - first:
+      213: 3967377412928655417
+    second: You die_26
+  - first:
+      213: 430436073391088832
+    second: You die_27
+  - first:
+      213: -2971034136001772741
+    second: You die_28
+  - first:
+      213: 3240080530618663338
+    second: You die_29
+  - first:
+      213: -4904753913276673267
+    second: You die_30
+  - first:
+      213: 1591084226789720868
+    second: You die_31
+  - first:
+      213: -210669744698894964
+    second: You die_32
+  - first:
+      213: 7020816882421597652
+    second: You die_33
+  - first:
+      213: 3284176469269138195
+    second: You die_34
+  - first:
+      213: 3107331691892044707
+    second: You die_35
+  - first:
+      213: -7602570254263342935
+    second: You die_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: You die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdf084cfe39e9460800000000000000
+      internalID: 7250395108116332023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 54
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4187d1614f820d0800000000000000
+      internalID: -3447237138931247935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 54
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c09bf28b2d653c2e0800000000000000
+      internalID: -2106744737646003956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 54
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4da8f886bf3be1d0800000000000000
+      internalID: -3320490247041012403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 54
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf0ba285bbbc56d0800000000000000
+      internalID: -3000316863479869521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 54
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c750878b455d3cb0800000000000000
+      internalID: -4882652638115506238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 51
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1af0a5642d5a6d50800000000000000
+      internalID: 6731295003963882012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 54
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3979082903e8cdfd0800000000000000
+      internalID: -2315819769107802221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 54
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad286db580584b040800000000000000
+      internalID: 4662497785182323418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_9
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 54
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab44b27a42976b70800000000000000
+      internalID: 8892236837715987374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 54
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4fd7352addfb340800000000000000
+      internalID: 4881864210348111049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_11
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 50
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5661d459848a50460800000000000000
+      internalID: 7207351808372315749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_12
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 54
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb9266d9f76788a0800000000000000
+      internalID: -6302954830740415506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_13
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 54
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaaa6008536a918b0800000000000000
+      internalID: -5180927147601646930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_14
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 54
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f817b2e093e7240800000000000000
+      internalID: 4791329786589974380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9771a9d008f534f30800000000000000
+      internalID: 4558592251417728889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 33
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8737ab1de6d048c40800000000000000
+      internalID: 5513546613424550776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_17
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 33
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5687f25f79ae46e00800000000000000
+      internalID: 1037211752576546917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_18
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34740e7dfe6a1b7e0800000000000000
+      internalID: -1751435231021217981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_19
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8624c6d1fe1680cb0800000000000000
+      internalID: -4897556915146702232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_20
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6e34bd91a2df5b0800000000000000
+      internalID: -5333060093195589891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_21
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 33
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa674f5351bd90c70800000000000000
+      internalID: 8937915819639469738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_22
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 33
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f877ad201121700c0800000000000000
+      internalID: -4609695829318797425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_23
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c07337faa8bc14c0800000000000000
+      internalID: -4315371298496483132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_24
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 33
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5862c7ac6327875a0800000000000000
+      internalID: -6523338480595229051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_25
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 33
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a3c3e50070f02f0800000000000000
+      internalID: -1004576493717931477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_26
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 33
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930558bacb4fe0730800000000000000
+      internalID: 3967377412928655417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_27
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c46df4045739f500800000000000000
+      internalID: 430436073391088832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_28
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b330e0cc134c4c6d0800000000000000
+      internalID: -2971034136001772741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_29
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 12
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa14f2f631417fc20800000000000000
+      internalID: 3240080530618663338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03df686d40deebb0800000000000000
+      internalID: -4904753913276673267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_31
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4234781acaaa41610800000000000000
+      internalID: 1591084226789720868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_32
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 12
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85dc4ebbfc831df0800000000000000
+      internalID: -210669744698894964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_33
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 12
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d50ec5b1c3fe6160800000000000000
+      internalID: 7020816882421597652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_34
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31bcb76391db39d20800000000000000
+      internalID: 3284176469269138195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_35
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3f98ed5b57f1b20800000000000000
+      internalID: 3107331691892044707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You die_36
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 12
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8aea642ae3e7690800000000000000
+      internalID: -7602570254263342935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      You die_0: 7250395108116332023
+      You die_1: -3447237138931247935
+      You die_10: 4881864210348111049
+      You die_11: 7207351808372315749
+      You die_12: -6302954830740415506
+      You die_13: -5180927147601646930
+      You die_14: 4791329786589974380
+      You die_15: 4558592251417728889
+      You die_16: 5513546613424550776
+      You die_17: 1037211752576546917
+      You die_18: -1751435231021217981
+      You die_19: -4897556915146702232
+      You die_2: -2106744737646003956
+      You die_20: -5333060093195589891
+      You die_21: 8937915819639469738
+      You die_22: -4609695829318797425
+      You die_23: -4315371298496483132
+      You die_24: -6523338480595229051
+      You die_25: -1004576493717931477
+      You die_26: 3967377412928655417
+      You die_27: 430436073391088832
+      You die_28: -2971034136001772741
+      You die_29: 3240080530618663338
+      You die_3: -3320490247041012403
+      You die_30: -4904753913276673267
+      You die_31: 1591084226789720868
+      You die_32: -210669744698894964
+      You die_33: 7020816882421597652
+      You die_34: 3284176469269138195
+      You die_35: 3107331691892044707
+      You die_36: -7602570254263342935
+      You die_4: -3000316863479869521
+      You die_5: -4882652638115506238
+      You die_6: 6731295003963882012
+      You die_7: -2315819769107802221
+      You die_8: 4662497785182323418
+      You die_9: 8892236837715987374
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
