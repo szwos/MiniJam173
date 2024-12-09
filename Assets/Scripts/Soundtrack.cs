@@ -52,6 +52,7 @@ public class Soundtrack : MonoBehaviour
         _musicIsPlaying = true;
         yield return new WaitForSeconds(music.clip.length);
         _musicIsPlaying = false;
+        BreakForRandomDuration();
 
     }
 
