@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hardness: 4
-  miningSpeedMultiplier: 2
+  miningSpeedMultiplier: 3
 --- !u!114 &5147699421918940170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Drill upgrade 3
-  price: 300
+  price: 4000
   icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &1139234351813249353
 GameObject:
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Drill upgrade 1
-  price: 100
+  price: 300
   icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &1952441439039758864
 GameObject:
@@ -158,6 +158,8 @@ Transform:
   - {fileID: 4770707025555899009}
   - {fileID: 6516474208939292104}
   - {fileID: 2153559205232092712}
+  - {fileID: 8508027547195306777}
+  - {fileID: 82736527223880871}
   m_Father: {fileID: 4111670597705183917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2151689882650857477
@@ -177,7 +179,71 @@ MonoBehaviour:
   - {fileID: 5770707683926233305}
   - {fileID: 5147699421918940170}
   - {fileID: 3922844699606113912}
+  - {fileID: 3961266529445333910}
+  - {fileID: 4251429892721281781}
   id: 0
+--- !u!1 &2050853805160175417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82736527223880871}
+  - component: {fileID: 5746332712420522169}
+  - component: {fileID: 4251429892721281781}
+  m_Layer: 0
+  m_Name: Drill upgrade 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &82736527223880871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050853805160175417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331372221480151131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5746332712420522169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050853805160175417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0649b018ed40f1ae718490a08a1892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hardness: 7
+  miningSpeedMultiplier: 6
+--- !u!114 &4251429892721281781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050853805160175417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Drill upgrade 6
+  price: 30000
+  icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &2079378611755945786
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hardness: 3
-  miningSpeedMultiplier: 1.5
+  miningSpeedMultiplier: 2
 --- !u!114 &5770707683926233305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Drill upgrade 2
-  price: 200
+  price: 1500
   icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &2293615133988755971
 GameObject:
@@ -300,8 +366,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Weapon access
-  price: 500
+  price: 1000
   icon: {fileID: 5949291851220348566, guid: 51d95cf1e495176449f173143c47c29b, type: 3}
+--- !u!1 &2308881915737813919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362504807119400420}
+  - component: {fileID: 5710358868111784849}
+  - component: {fileID: 1712514517082472432}
+  m_Layer: 0
+  m_Name: Fuel tank upgrade 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1362504807119400420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308881915737813919}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5721288094223485658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5710358868111784849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308881915737813919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Fuel tank upgrade 5
+  price: 40000
+  icon: {fileID: 4152862011682097102, guid: cc1f3376a35b89342b46d62bf80f1522, type: 3}
+--- !u!114 &1712514517082472432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308881915737813919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013351de6e5dd77468f12df760e79d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewFuel: 32000
 --- !u!1 &3329417319538293825
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +491,67 @@ MonoBehaviour:
   itemName: Weapon upgrade 3
   price: 3000
   icon: {fileID: -2346302928887187388, guid: 04465d832b394d249bf07da15a4504e2, type: 3}
+--- !u!1 &3370533228764942047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4274861701544372670}
+  - component: {fileID: 1942614734424142329}
+  - component: {fileID: 6762165445151141689}
+  m_Layer: 0
+  m_Name: Fuel tank upgrade 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4274861701544372670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370533228764942047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5721288094223485658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942614734424142329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370533228764942047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Fuel tank upgrade 4
+  price: 20000
+  icon: {fileID: 4152862011682097102, guid: cc1f3376a35b89342b46d62bf80f1522, type: 3}
+--- !u!114 &6762165445151141689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370533228764942047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013351de6e5dd77468f12df760e79d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewFuel: 16000
 --- !u!1 &3393735492287078803
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +585,8 @@ Transform:
   - {fileID: 3281618517489279210}
   - {fileID: 417268396771354078}
   - {fileID: 226701545698679553}
+  - {fileID: 4274861701544372670}
+  - {fileID: 1362504807119400420}
   m_Father: {fileID: 4111670597705183917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7597398791213654517
@@ -412,10 +602,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItems:
-  - {fileID: 2579452308136204576}
   - {fileID: 5978069981822338708}
   - {fileID: 7591097481275722747}
+  - {fileID: 2579452308136204576}
+  - {fileID: 1942614734424142329}
+  - {fileID: 5710358868111784849}
   id: 0
+--- !u!1 &4181388047801817757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8508027547195306777}
+  - component: {fileID: 713030077249936576}
+  - component: {fileID: 3961266529445333910}
+  m_Layer: 0
+  m_Name: Drill upgrade 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8508027547195306777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181388047801817757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331372221480151131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &713030077249936576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181388047801817757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0649b018ed40f1ae718490a08a1892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hardness: 6
+  miningSpeedMultiplier: 5
+--- !u!114 &3961266529445333910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181388047801817757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Drill upgrade 5
+  price: 20000
+  icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &4965506736284839678
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Fuel tank upgrade 2
-  price: 2000
+  price: 4000
   icon: {fileID: 4152862011682097102, guid: cc1f3376a35b89342b46d62bf80f1522, type: 3}
 --- !u!114 &5488390963980222862
 MonoBehaviour:
@@ -476,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013351de6e5dd77468f12df760e79d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewFuel: 3000
+  NewFuel: 4000
 --- !u!1 &5349112274826477686
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,8 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0649b018ed40f1ae718490a08a1892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hardness: 4
-  miningSpeedMultiplier: 2
+  hardness: 5
+  miningSpeedMultiplier: 4
 --- !u!114 &3922844699606113912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,8 +877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374fc9b849c54be19b22e0a67941e4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Drill upgrade 3
-  price: 300
+  itemName: Drill upgrade 4
+  price: 10000
   icon: {fileID: -8621466680242103102, guid: b35ec5c5729c6ef4282ef88467a2e734, type: 3}
 --- !u!1 &6383196723698212939
 GameObject:
@@ -795,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Fuel tank upgrade 3
-  price: 3000
+  price: 10000
   icon: {fileID: 4152862011682097102, guid: cc1f3376a35b89342b46d62bf80f1522, type: 3}
 --- !u!114 &411711020901588377
 MonoBehaviour:
@@ -809,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013351de6e5dd77468f12df760e79d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewFuel: 5000
+  NewFuel: 8000
 --- !u!1 &8676835188860566243
 GameObject:
   m_ObjectHideFlags: 0
