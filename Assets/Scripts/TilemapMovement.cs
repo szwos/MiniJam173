@@ -195,7 +195,7 @@ public class TilemapMovement : MonoBehaviour //TODO: rename o just CharacterCont
     {
         StartCoroutine(DigCoroutine(transform.position, 
             digDestination, 
-            DiggingDuration * (1f/block.MiningSpeedMultiplier) * PlayerStats.Instance.DrillSpeedMultiplier, 
+            DiggingDuration * (1f/block.MiningSpeedMultiplier) * 1/PlayerStats.Instance.DrillSpeedMultiplier, 
             direction));
     }
 

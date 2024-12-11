@@ -52,7 +52,7 @@ public class GhostEnemyScript : MonoBehaviour, IEnemy
 
     public void FixedUpdate()
     {
-        //float distance = Vector3.Distance(transform.position, Player.transform.position);
+        float distance = Vector3.Distance(transform.position, Player.transform.position);
         //Vector2 direction = Player.transform.position - transform.position;        
         //direction.Normalize();
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -60,12 +60,15 @@ public class GhostEnemyScript : MonoBehaviour, IEnemy
         transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
         //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
-        if(Player.transform.position.x < transform.position.x) 
+
+        if (Player.transform.position.x < transform.position.x)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        } else
+        }
+        else
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
+        
     }
 }
